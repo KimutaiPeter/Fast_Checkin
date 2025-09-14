@@ -1,0 +1,92 @@
+*{
+    font-family: "Outfit", sans-serif;
+}
+
+.phone_main_container{
+    background-color: rgb(255,255,255,0.1);
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+
+}
+
+.content_container1{
+    height: 100%;
+    width: 100%;
+    gap:65%;
+    
+}
+
+
+.content_container1 h2{
+    color:white;
+    font-size: large;
+    font-weight: 600;
+    
+}
+
+.main_button1{
+    width:70%;
+    margin-bottom: 30px;
+    background-color: #34DD5A;
+    color:white;
+    border-radius: 12px;
+    border:none;
+    padding: 5px;
+    font-size: 25px;
+    gap:10%;
+}
+
+.main_button1 .img{
+    width: 24px;
+    gap:10px;
+}
+
+
+.content_container2{
+    height: 100%;
+    width: 100%;
+    gap:30%;
+    
+}
+
+.content_container2 div{
+    gap:20px;
+}
+
+.input_container{
+    width: 100%;
+    gap:5px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.input_container button{
+    width:70%;
+    border-radius: 12px;
+    border:none;
+    padding: 5px;
+    background-color: #34DD5A;
+    font-size: 25px;
+    color: white;
+}
+
+.input_container input{
+    width:66%;
+    border-radius: 12px;
+    border:none;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.input_container input:focus{
+    outline: none;
+}
+
+.content_container3{
+    width: 100%;
+    height: 100%;
+    gap:20px;
+}

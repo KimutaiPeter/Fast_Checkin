@@ -1,0 +1,96 @@
+.main_scan_container{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0%;
+    left: 0px;
+
+    background-color: #1118271e;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.main_scan_container1{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0%;
+    left: 0px;
+
+    background-color: #111827d4;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+.scan_title_container{
+    padding: 20px 0px;
+    height: 85%;
+}
+
+.scan_title_container h2{
+    color: white;
+}
+
+.scan_title_container span{
+    color: #969DA9;
+}
+
+.main_scan_buttons_container{
+    width: 100%;
+}
+
+.main_scan_buttons_container button{
+    background-color: #34DD5A;
+    width: 70%;
+    padding:5px;
+    border-radius: 9px;
+    border: none;
+    color: white;
+    font-size: 20px;
+
+}
+
+.scan_toggle_buttons_container{
+    position: absolute;
+    top:40px;
+    left:20px;
+    border: #969DA9 solid 1px;
+    gap:10px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #111827;
+    
+}
+
+
+/* Not found page */
+.main_not_found_container{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0%;
+    left: 0px;
+
+    background-color: #111827;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    gap:30px;
+}
+
+.not_found_title_container{
+    padding: 20px 0px;
+}
+
+.not_found_title_container h2{
+    color: white;
+
+}
+.not_found_title_container span{
+    color:#969DA9;
+}
+
+
+.instructions_container{
+    color:aliceblue;
+}

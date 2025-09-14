@@ -1,0 +1,146 @@
+html, body{
+    width: 100%; height: 100%;
+    margin: 0px;
+    
+}
+
+.main_container {
+    width: 100%;
+    height: 100%;
+    background-color: #111827;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    gap:20px;
+    
+}
+
+
+.title_container{
+    padding: 20px 0px 0px 0px;
+}
+
+.title_container h3 {
+    color: white;
+}
+
+.title_container span {
+    color: #969DA9;
+}
+
+
+.search_bar_container{
+    background-color: #1F2937;
+    border:solid 1px #969DA9;
+    gap:25px;
+    padding: 10px;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.search_bar_container input{
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: #1F2937;
+    color: #969DA9;
+}
+
+.search_bar_container input:focus{
+    border: none;
+    outline: none;
+    background-color: #1F2937;
+}
+
+
+.results_container{
+    width: 100%;
+    height: 70%;
+    overflow-x: scroll;
+    gap:10px;
+}
+
+
+.result_container{
+    gap:30px;
+    background-color: #1F2937;
+    border:solid 1px #969DA9;
+    width: 70%;
+    padding: 10px 10px;
+    border-radius: 10px;
+
+}
+
+
+.result_details_container{
+    color: #969DA9;
+}
+
+.result_not_found_container{
+    width: 70%;
+    padding: 10px;
+    background-color: #581A1B;
+    border:solid 1px #969DA9;
+    color: white;
+    border-radius: 10px;
+
+}
+
+.result_options{
+    gap:15px;
+}
+
+.result_options .button1{
+    background-color: #2563EB;
+}
+
+.result_options .button2{
+    background-color: #CA8A04;
+}
+
+.result_options button{
+    gap:5px;
+    background-color: #34DD5A;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.result_not_found_container span{
+    color: #969DA9;
+
+
+}
+
+.toggle_buttons_container{
+    width: 100%;
+}
+
+.toggle_buttons_container img{
+    width: 30px;
+}
+
+.left_toggle_button{
+    border: 1px solid #969DA9;
+    color: white;
+    width: 30%;
+    padding: 5px;
+    border-radius: 9px 0px 0px 9px;
+    
+
+}
+
+.right_toggle_button{
+    border: 1px solid #969DA9;
+    color: white;
+    background-color: #34DD5A;
+    width: 40%;
+    padding: 5px;
+    border-radius:0px 9px 9px 0px;
+    
+}
+
+.highlight {
+  background-color: yellow;
+}
