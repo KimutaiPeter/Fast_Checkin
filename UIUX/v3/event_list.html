@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<title>eCitizen Events Portal</title>
+<link rel="stylesheet" href="event_list.css">
+</head>
+<body>
+<div class="event_list-wrapper">
+  <div class="event_list-layout-container">
+
+    <!-- HEADER -->
+    <header class="event_list-header">
+      <div class="event_list-header-left">
+        <div class="event_list-brand">
+          <div class="event_list-brand-icon">
+            <span class="material-symbols-outlined">account_balance</span>
+          </div>
+          <h2 class="event_list-brand-name">Events</h2>
+        </div>
+        
+      </div>
+      <div class="event_list-header-right">
+        
+        <div class="event_list-header-btns">
+          <button class="event_list-icon-btn">
+            <span class="material-symbols-outlined">download</span>
+          </button>
+          <button class="event_list-icon-btn">
+            <span class="material-symbols-outlined">logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="event_list-main">
+      <div class="event_list-content-container">
+
+        <!-- PAGE HEADER -->
+        <div class="event_list-page-header">
+          <div class="event_list-page-title-group">
+            <h1 class="event_list-page-title">Upcoming Events</h1>
+            <p class="event_list-page-subtitle">Official government gatherings, national celebrations, and administrative conferences.</p>
+          </div>
+          <button class="event_list-register-btn">
+            <span class="material-symbols-outlined">add</span>
+            <span>Register Event</span>
+          </button>
+        </div>
+
+        <!-- TABS -->
+        <div class="event_list-tabs-wrap">
+          <div class="event_list-tabs">
+            <a class="event_list-tab event_list-tab-active" href="#">
+              <span class="material-symbols-outlined">event_list</span>
+              All Events
+            </a>
+            <a class="event_list-tab" href="#">
+              <span class="material-symbols-outlined">confirmation_number</span>
+              My Registrations
+            </a>
+            <a class="event_list-tab" href="#">
+              <span class="material-symbols-outlined">history</span>
+              Past Events
+            </a>
+          </div>
+        </div>
+
+        <!-- EVENTS GRID -->
+        <div class="event_list-events-grid">
+
+          <!-- CREATE EVENT CARD -->
+          <div class="event_list-card">
+            <div class="event_list-card-body">
+              <div class="event_list-card-title-row">
+                <span class="material-symbols-outlined">add_circle</span>
+                <h3 class="event_list-card-title">Create New Event</h3>
+              </div>
+              <div class="event_list-form-grid">
+                <div class="event_list-form-field">
+                  <label class="event_list-form-label">Event Name</label>
+                  <input class="event_list-form-input" placeholder="e.g. Annual Tech Summit" type="text"/>
+                </div>
+                <div class="event_list-form-field">
+                  <label class="event_list-form-label">Date</label>
+                  <input class="event_list-form-input" type="date"/>
+                </div>
+                <div class="event_list-form-field">
+                  <label class="event_list-form-label">Location</label>
+                  <input class="event_list-form-input" placeholder="City or Venue" type="text"/>
+                </div>
+              </div>
+              <div class="event_list-features-section">
+                <span class="event_list-features-label">Event Features</span>
+                <div class="event_list-features-list">
+                  <label class="event_list-checkbox-label">
+                    <input class="event_list-checkbox" type="checkbox"/>
+                    <span class="event_list-checkbox-text">Enable OCR Scanning</span>
+                  </label>
+                  <label class="event_list-checkbox-label">
+                    <input class="event_list-checkbox" type="checkbox"/>
+                    <span class="event_list-checkbox-text">Enable Barcode Scanning</span>
+                  </label>
+                  <label class="event_list-checkbox-label">
+                    <input class="event_list-checkbox" type="checkbox"/>
+                    <span class="event_list-checkbox-text">Include Tokens</span>
+                  </label>
+                </div>
+              </div>
+              <div class="event_list-card-footer">
+                <button class="event_list-create-btn">
+                  <span class="material-symbols-outlined">check_circle</span>
+                  Create Event
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- MASHUJAA DAY CARD -->
+          <div class="event_list-card">
+            <div class="event_list-event-card-body">
+              <div class="event_list-event-card-top">
+                <div class="event_list-event-card-header">
+                  <span class="event_list-badge event_list-badge-national">National Holiday</span>
+                  <span class="event_list-views">
+                    <span class="material-symbols-outlined">visibility</span> 1.2k views
+                  </span>
+                </div>
+                <h3 class="event_list-event-name">National Mashujaa Day Celebration</h3>
+                <div class="event_list-event-meta">
+                  <div class="event_list-meta-row">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span>October 20, 2024 • 08:00 AM</span>
+                  </div>
+                  <div class="event_list-meta-row">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Uhuru Park, Nairobi</span>
+                  </div>
+                </div>
+                <p class="event_list-event-desc">Annual national celebration to honor Kenyan heroes who contributed to the struggle for independence and post-independence development.</p>
+              </div>
+              <div class="event_list-event-card-actions">
+                <div class="event_list-avatars">
+                  <div class="event_list-attendee-avatar">
+                    <img alt="Attendee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6TqsdtVWkjapUysidFOxi1WZQ-igECv7sZp_ejI_YAOMdeMrYJiCGVq87_P5GqiYK5uZThrYyk-qmzPDRpYA7FY28RBFj2FKciXLvRoaYhIqeiY0TkokcdRSVbToQhgE777TFADX-RBFXCI-rFeIExWvFAlgK6yy0_PRXhdcxph2vb-oRVdHzKzK8lHAPt-o2RCD_5OZYlmYjXbFOGa5ISKF6xqQNh7I9m2RNZTFZ74UGjJSc2zHxh0UUY_gGO7svT61l5Lp2-uIC"/>
+                  </div>
+                  <div class="event_list-attendee-avatar">
+                    <img alt="Attendee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLxmrWESX-XC7J8S3_8FaVtcoHWct0VYuqGcS-WMv9zm4V3kED7ZNuG6DwzCqAowGZQcNZpHN8N1VTDiK6oonLgfYAfeVi1fMVaaHAYb71TaJ3_5kgVihOxmV7LMsc6l2415KkpjybhKTTAkKtPnNnaxhLqKLD6PpJWTwHCEcV-oIgnnKphShVroRxZzptqO8ZljlJCeNu1JCwV_V8JLmP7VzJW-ZpJKQCBmiExfx9DeHcfFolU3Mh7N_i1ccEUi0pryJC9rNm0A8o"/>
+                  </div>
+                  <div class="event_list-attendee-avatar">
+                    <img alt="Attendee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCSpdHa5bj1wKbcYDKx8llV6A8NC6LvGOwT-mut9pKBOrKpaLaqAA-L5bTjIbImWj9NxeNxgd0JqvYv9BMxfxCV9rQdp1sSl2-qA0-AhZf23geh9rGhRfVbMTIxmoz9MvVvi1YbZx93mzju9E8ObvKGX87E1Xq_7uOQJVBRGOIP63xTZgHccvRwIqLSTFdcX5CHATkU61C2Ycaz3GrEwYL8NjMTaTl7fAXXg_7t3xqUVPIILw5cREtIiBTcaAYy4K2-H4VgHhJ3N88"/>
+                  </div>
+                  <div class="event_list-attendee-more">+45</div>
+                </div>
+                <button class="event_list-btn-primary">
+                  <span class="material-symbols-outlined">group</span>
+                  Manage Guests
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEVOLUTION CONFERENCE CARD -->
+          <div class="event_list-card">
+            <div class="event_list-event-card-body">
+              <div class="event_list-event-card-top">
+                <div class="event_list-event-card-header">
+                  <span class="event_list-badge event_list-badge-conference">Conference</span>
+                  <span class="event_list-views">
+                    <span class="material-symbols-outlined">visibility</span> 840 views
+                  </span>
+                </div>
+                <h3 class="event_list-event-name">Annual Devolution Conference</h3>
+                <div class="event_list-event-meta">
+                  <div class="event_list-meta-row">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span>Nov 12-15, 2024 • 09:00 AM</span>
+                  </div>
+                  <div class="event_list-meta-row">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Eldoret Sports Club</span>
+                  </div>
+                </div>
+                <p class="event_list-event-desc">Connecting county governments and national leadership to harmonize policy implementation across all 47 counties.</p>
+              </div>
+              <div class="event_list-event-card-actions">
+                <div class="event_list-status">
+                  <span class="event_list-status-dot"></span>
+                  <span class="event_list-status-text">Registration Open</span>
+                </div>
+                <button class="event_list-btn-dark">
+                  <span class="material-symbols-outlined">how_to_reg</span>
+                  Check-in
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- DIGITAL TRANSFORMATION CARD -->
+          <div class="event_list-card">
+            <div class="event_list-event-card-body">
+              <div class="event_list-event-card-top">
+                <div class="event_list-event-card-header">
+                  <span class="event_list-badge event_list-badge-workshop">Workshop</span>
+                  <span class="event_list-views">
+                    <span class="material-symbols-outlined">visibility</span> 450 views
+                  </span>
+                </div>
+                <h3 class="event_list-event-name">Digital Transformation Summit</h3>
+                <div class="event_list-event-meta">
+                  <div class="event_list-meta-row">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span>Dec 05, 2024 • 10:00 AM</span>
+                  </div>
+                  <div class="event_list-meta-row">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>KICC, Tsavo Hall</span>
+                  </div>
+                </div>
+                <p class="event_list-event-desc">Exploring the future of e-governance and AI in public service delivery for a more efficient Kenya.</p>
+              </div>
+              <div class="event_list-event-card-actions">
+                <div class="event_list-limited">
+                  <span class="material-symbols-outlined">schedule</span>
+                  Limited spots remaining
+                </div>
+                <button class="event_list-btn-primary">
+                  <span class="material-symbols-outlined">how_to_reg</span>
+                  Check-in
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end events-grid -->
+      </div>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>

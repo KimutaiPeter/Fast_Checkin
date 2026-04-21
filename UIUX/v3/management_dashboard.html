@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Architect Events | Annual Devolution Conference</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="management_dashboard.css">
+</head>
+
+<body>
+  <div class="management-page-wrapper">
+
+    <!-- ═══════════════════════════════════════════════════════════ HEADER -->
+    <header class="management-header">
+      <div class="management-header-inner">
+        <!-- Left: Logo + Nav -->
+        <div class="management-header-left">
+          <div class="management-logo">
+            <div class="management-logo-icon">
+              <span class="management-material-symbols-outlined management-fill-1">account_balance</span>
+            </div>
+            <span class="management-logo-text">Events</span>
+          </div>
+
+        </div>
+        <!-- Right: Actions -->
+        <div class="management-header-actions">
+          <button class="management-icon-btn">
+            <span class="management-material-symbols-outlined">download</span>
+          </button>
+          <button class="management-icon-btn">
+            <span class="management-material-symbols-outlined">logout</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="management-main">
+
+      <!-- ── Dashboard Header ── -->
+      <div class="management-dashboard-header">
+        <div class="management-dashboard-header-text">
+          <h1 class="management-page-title">Annual Devolution Conference</h1>
+          <p class="management-page-subtitle">
+            The definitive annual gathering for architectural visionaries. Real-time monitoring of attendance metrics.
+          </p>
+          <div class="management-event-location">
+            <span class="management-material-symbols-outlined">location_on</span>
+            <span>Grand Hall, Level 4 — Main Entrance Gate B12</span>
+          </div>
+        </div>
+        <div class="management-dashboard-actions">
+          <select class="management-event-select" aria-label="Set Event Status">
+            <option value="open" selected>Event: Open</option>
+            <option value="paused">Event: Paused</option>
+            <option value="closed">Event: Closed</option>
+          </select>
+          <button class="management-btn-primary">
+            <span class="management-material-symbols-outlined">add</span>
+            Register Event
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Two-Column Grid ── -->
+      <div class="management-grid-layout">
+
+        <!-- ════ LEFT COLUMN ════ -->
+        <div class="management-col-left">
+
+          <!-- ── Attendance Summary Card ── -->
+          <div class="management-card">
+            <h3 class="management-card-title">Attendance Summary</h3>
+            <div class="management-summary-grid">
+              <!-- Total Guests -->
+              <div>
+                <span class="management-stat-label">Total Guests</span>
+                <div class="management-stat-value">840</div>
+                <div class="management-progress-track">
+                  <div class="management-progress-fill" style="width:100%;"></div>
+                </div>
+              </div>
+              <!-- Checked-In -->
+              <div>
+                <span class="management-stat-label">Checked-In</span>
+                <div class="management-stat-value management-primary">612</div>
+                <div class="management-progress-track">
+                  <div class="management-progress-fill" style="width:72%;"></div>
+                </div>
+              </div>
+              <!-- Remaining -->
+              <div>
+                <span class="management-stat-label">Remaining</span>
+                <div class="management-stat-value management-muted">228</div>
+                <div class="management-progress-track">
+                  <div class="management-progress-fill management-muted-fill" style="width:28%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="management-card-actions">
+              <button class="management-btn-primary-lg">
+                <span class="management-material-symbols-outlined">qr_code_scanner</span>
+                Start OCR Scanner
+              </button>
+              <button class="management-btn-secondary-lg">
+                <span class="management-material-symbols-outlined">person_add</span>
+                Manual Check-in
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Active Event Features Card ── -->
+          <div class="management-card">
+            <div class="management-features-header">
+              <h4 class="management-features-title">Active Event Features</h4>
+              <button class="management-features-edit-btn">Edit Configuration</button>
+            </div>
+            <div class="management-features-grid">
+              <!-- OCR Scanning (active) -->
+              <div class="management-feature-item">
+                <div class="management-checkbox-active">
+                  <span class="management-material-symbols-outlined">check</span>
+                </div>
+                <div>
+                  <div class="management-feature-name">OCR Scanning</div>
+                  <div class="management-feature-desc">Automatic guest recognition</div>
+                </div>
+              </div>
+              <!-- Barcode Scanning (active) -->
+              <div class="management-feature-item">
+                <div class="management-checkbox-active">
+                  <span class="management-material-symbols-outlined">check</span>
+                </div>
+                <div>
+                  <div class="management-feature-name">Barcode Scanning</div>
+                  <div class="management-feature-desc">Digital ticket verification</div>
+                </div>
+              </div>
+              <!-- Include Tokens (inactive) -->
+              <div class="management-feature-item management-disabled">
+                <div class="management-checkbox-inactive"></div>
+                <div>
+                  <div class="management-feature-name">Include Tokens</div>
+                  <div class="management-feature-desc">Post-event digital rewards</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Scanning Configuration Card ── -->
+          <div class="management-card">
+            <h4 class="management-scan-config-title">Scanning Configuration</h4>
+            <div class="management-form-group">
+              <label class="management-form-label" for="scan-regex">Scanning Pattern (Regex)</label>
+              <div class="management-input-row">
+                <input class="management-text-input" id="scan-regex" name="scan-regex" placeholder="^[A-Z0-9]{8,12}$"
+                  type="text" />
+                <button class="management-btn-save">
+                  <span class="management-material-symbols-outlined">save</span>
+                  Save Configuration
+                </button>
+              </div>
+              <p class="management-form-hint">Define the regular expression for the OCR scanner.</p>
+            </div>
+          </div>
+
+        </div><!-- /management-col-left -->
+
+        <!-- ════ RIGHT COLUMN ════ -->
+        <div class="management-col-right">
+
+          <!-- ── Arrival Rate / Donut Card ── -->
+          <div class="management-card management-donut-card">
+            <div class="management-donut-wrap">
+              <svg class="management-donut-svg" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+                <!-- Track -->
+                <circle cx="96" cy="96" r="88" fill="transparent" stroke="#e6e8ea" stroke-width="8" />
+                <!-- Progress (72.8% of circumference 552.9 ≈ 402.5 offset = 150.4) -->
+                <circle cx="96" cy="96" r="88" fill="transparent" stroke="#003EB3" stroke-width="12"
+                  stroke-linecap="round" stroke-dasharray="552.9" stroke-dashoffset="154.8" />
+              </svg>
+              <div class="management-donut-inner">
+                <span class="management-donut-value">73%</span>
+                <span class="management-donut-label">Arrival Rate</span>
+              </div>
+            </div>
+            <div>
+              <div class="management-live-indicator">
+                <span class="management-pulse-dot"></span>
+                <span class="management-live-text">Live Feed Active</span>
+              </div>
+              <p class="management-arrival-desc">Approximately 14 guests arriving every 5 minutes.</p>
+            </div>
+          </div>
+
+          <!-- ── Secondary Info Card ── -->
+          <div class="management-card management-space-y-8">
+            <!-- Staff -->
+            <div>
+              <span class="management-info-section-label">Staff on Duty</span>
+              <div class="management-staff-row">
+                <div class="management-avatar-stack">
+                  <img alt="Staff 1"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuASXFU9F_lWzGa8bQmBEe_3WV3KD7tWy1bEAajXKG-BIlQn5e79eyqrCET0WFJ1pa-RfmQpzIb4NGaTwQb2qAJlQEhYMXghnsFLx6fDY-1c0q37Ea7IH7iP80lLWHtoBV1FPdzyXGsNxP47pyYHRAUonakLIGzBhbGXad9WY4-ULpimwWMnhQ6FflyoJKUNYsfWhQA1a0D0kCZuaQi93L9gt6wh_9Z7Y9bvQu2sfFcLHLpBAYKZZRA_OFwwkD5EptVsrMwQM_HHQfU" />
+                  <img alt="Staff 2"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH7y8wUR1ugmoYjs0RWTPfkVCDtRe3_HKRZNm-uXxhcbUd_QEtw1ZSTgzoFW_EH-asbIWUXDgFcCDoOLJKV19nSIDseOFS7_su5bYzyt8r3pFfxEZ5z-hryob25Lin-XIBoGeLa15m_WCOfEjF-JQkpJ8mJb8hBZZTykji6zZPswepWyE5j1sZYhMi8jm52hPsyL1TW4xGW5fZ4CCixWr-xnl5pePcDkTyCtj4_QQMwRkr1oNk-NYn5huf1OHQcgNplnaK-uv4dTw" />
+                  <div class="management-avatar-extra">+8</div>
+                </div>
+                <button class="management-manage-team-btn">Manage Team</button>
+              </div>
+            </div>
+
+            <!-- Broadcast -->
+            <div class="management-divider-wrap">
+              <button class="management-broadcast-btn">
+                <span class="management-broadcast-label">Broadcast Announcement</span>
+                <span class="management-material-symbols-outlined">campaign</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Dark Support Card ── -->
+          <div class="management-dark-card">
+            <h5 class="management-dark-card-title">Architect Pro Support</h5>
+            <p class="management-dark-card-body">Need assistance with the scanner hardware or manual overrides?</p>
+            <button class="management-dark-card-btn">Contact Direct</button>
+          </div>
+
+        </div><!-- /management-col-right -->
+
+      </div><!-- /management-grid-layout -->
+
+    </main><!-- /management-main -->
+
+    <!-- ═══════════════════════════════════════════════════════ FAB -->
+    <button class="management-fab" aria-label="Add">
+      <span class="management-material-symbols-outlined">add</span>
+    </button>
+
+  </div><!-- /management-page-wrapper -->
+
+
+</body>
+
+</html>

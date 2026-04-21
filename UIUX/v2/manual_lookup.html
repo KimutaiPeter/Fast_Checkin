@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<title>eCitizen - Manual Guest Lookup</title>
+<link rel="stylesheet" href="manual_lookup.css">
+</head>
+<body>
+
+<div class="manual_lookup-page">
+  <div class="manual_lookup-layout">
+
+    <!-- HEADER -->
+    <header class="manual_lookup-header">
+      <div class="manual_lookup-header-left">
+        <div class="manual_lookup-brand-icon">
+          <span class="material-symbols-outlined">fingerprint</span>
+        </div>
+        <h2 class="manual_lookup-brand-name">eCitizen</h2>
+      </div>
+      <div class="manual_lookup-header-right">
+        <nav class="manual_lookup-nav">
+          <a href="#">Home</a>
+          <a href="#" class="manual_lookup-nav-active">Guests</a>
+          <a href="#">Reports</a>
+        </nav>
+        <div class="manual_lookup-header-actions">
+          <button class="manual_lookup-icon-btn" type="button">
+            <span class="material-symbols-outlined">notifications</span>
+          </button>
+          <button class="manual_lookup-icon-btn" type="button">
+            <span class="material-symbols-outlined">account_circle</span>
+          </button>
+        </div>
+        <div class="manual_lookup-avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFcZ25K6HSwnrv9FdoKRVPZJn6e16GBIdGXYWJj40K4vK4yYzmxDGYmZnHm4IZPnDpGMo4zyNWDwA9-koEH-7iqy-eAi8RlMJFukzw_LPMdHM9TGOdLN8G0_HFeVKD6Y38yrL5xh8vEd5O8k1pBaFfHkNwkCdHvKObWBAzpz7RKvCWKko62yIA89bUTnSFYmHaCMLbRO4eRF9iJAB7hQOWSLFH5iB2f-2U3MtVNW0dNV1Hm7LecxrMnHqGw_P0cQoyhjuP81cnnnoj");'></div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="manual_lookup-main">
+      <div class="manual_lookup-content">
+
+        <!-- Breadcrumb & Title -->
+        <div>
+          <div class="manual_lookup-breadcrumb">
+            <span class="material-symbols-outlined">group</span>
+            <span>Guest Management</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+            <span class="manual_lookup-breadcrumb-active">Lookup</span>
+          </div>
+          <h1 class="manual_lookup-page-title">Manual Guest Lookup</h1>
+          <p class="manual_lookup-page-desc">Search, verify, and check-in guests manually using their credentials.</p>
+        </div>
+
+        <!-- Method Toggle -->
+        <div class="manual_lookup-toggle-wrap">
+          <button class="manual_lookup-toggle-btn" type="button">
+            <span class="material-symbols-outlined">document_scanner</span>
+            OCR Check-in
+          </button>
+          <button class="manual_lookup-toggle-btn manual_lookup-toggle-btn-active" type="button">
+            <span class="material-symbols-outlined">search</span>
+            Manual Lookup
+          </button>
+        </div>
+
+        <!-- Search -->
+        <div class="manual_lookup-search-wrap">
+          <div class="manual_lookup-search-icon">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+          <input
+            class="manual_lookup-search-input"
+            type="text"
+            placeholder="Search by name, ID, or phone..."
+          />
+        </div>
+
+        <!-- Filters Row -->
+        <div class="manual_lookup-filters-row">
+          <h3 class="manual_lookup-section-label">Recent &amp; Matched Guests</h3>
+          <div>
+            <button class="manual_lookup-filter-btn" type="button">
+              <span class="material-symbols-outlined">filter_list</span>
+              Filter
+            </button>
+          </div>
+        </div>
+
+        <!-- Guest List -->
+        <div class="manual_lookup-guest-list">
+
+          <!-- Guest Card 1 -->
+          <div class="manual_lookup-guest-card">
+            <div class="manual_lookup-guest-info">
+              <div class="manual_lookup-guest-details">
+                <span class="manual_lookup-guest-name">Allan Jackson</span>
+                <div class="manual_lookup-guest-meta">
+                  <div class="manual_lookup-meta-item">
+                    <span class="material-symbols-outlined">badge</span>
+                    <span>ID: 29384756</span>
+                  </div>
+                  <div class="manual_lookup-meta-item">
+                    <span class="material-symbols-outlined">call</span>
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="manual_lookup-guest-actions">
+              <button class="manual_lookup-btn-checkin" type="button">
+                <span class="material-symbols-outlined">login</span>
+                Check In
+              </button>
+              <button class="manual_lookup-btn-more" type="button">More</button>
+            </div>
+          </div>
+
+          <!-- Guest Card 2 -->
+          <div class="manual_lookup-guest-card">
+            <div class="manual_lookup-guest-info">
+              <div class="manual_lookup-guest-details">
+                <span class="manual_lookup-guest-name">Sarah Lee</span>
+                <div class="manual_lookup-guest-meta">
+                  <div class="manual_lookup-meta-item">
+                    <span class="material-symbols-outlined">badge</span>
+                    <span>ID: 88721034</span>
+                  </div>
+                  <div class="manual_lookup-meta-item">
+                    <span class="material-symbols-outlined">call</span>
+                    <span>+1 (555) 987-6543</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="manual_lookup-guest-actions">
+              <button class="manual_lookup-btn-checkin" type="button">
+                <span class="material-symbols-outlined">login</span>
+                Check In
+              </button>
+              <button class="manual_lookup-btn-more" type="button">More</button>
+            </div>
+          </div>
+
+          <!-- Guest Card 3 -->
+          <div class="manual_lookup-guest-card">
+            <div class="manual_lookup-guest-info">
+              <div class="manual_lookup-guest-details">
+                <span class="manual_lookup-guest-name">Marcus Vance</span>
+                <div class="manual_lookup-guest-meta">
+                  <div class="manual_lookup-meta-item">
+                    <span class="material-symbols-outlined">badge</span>
+                    <span>ID: 44521980</span>
+                  </div>
+                  <div class="manual_lookup-meta-item">
+                    <span class="material-symbols-outlined">call</span>
+                    <span>+1 (555) 234-8899</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="manual_lookup-guest-actions">
+              <button class="manual_lookup-btn-checkin" type="button">
+                <span class="material-symbols-outlined">login</span>
+                Check In
+              </button>
+              <button class="manual_lookup-btn-more" type="button">More</button>
+            </div>
+          </div>
+
+        </div><!-- end guest-list -->
+
+        <!-- Empty State -->
+        <div class="manual_lookup-empty-state">
+          <div class="manual_lookup-empty-icon">
+            <span class="material-symbols-outlined">person_add</span>
+          </div>
+          <h4 class="manual_lookup-empty-title">New Guest?</h4>
+          <p class="manual_lookup-empty-desc">If the guest is not found in the system, you can register them as a new visitor.</p>
+          <button class="manual_lookup-btn-register" type="button">Register New Guest</button>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- MOBILE BOTTOM TAB BAR -->
+    <footer class="manual_lookup-bottom-bar">
+      <button class="manual_lookup-tab-btn" type="button">
+        <span class="material-symbols-outlined">home</span>
+        <span>Home</span>
+      </button>
+      <button class="manual_lookup-tab-btn manual_lookup-tab-btn-active" type="button">
+        <span class="material-symbols-outlined">group</span>
+        <span>Guests</span>
+      </button>
+      <button class="manual_lookup-tab-btn" type="button">
+        <span class="material-symbols-outlined">description</span>
+        <span>Reports</span>
+      </button>
+      <button class="manual_lookup-tab-btn" type="button">
+        <span class="material-symbols-outlined">settings</span>
+        <span>Settings</span>
+      </button>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>

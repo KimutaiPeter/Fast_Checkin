@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guest Check-in - OCR Scan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="desktop_ocr.css">
+</head>
+
+<body>
+    <div class="desktop_ocr-page">
+
+        <!-- ── HEADER ── -->
+        <header class="desktop_ocr-header">
+            <div class="desktop_ocr-header-inner">
+                <div class="desktop_ocr-brand">
+                    <div class="desktop_ocr-brand-icon">
+                        <span class="material-symbols-outlined">account_balance</span>
+                    </div>
+                    <h2 class="desktop_ocr-brand-title">EVENTS</h2>
+                </div>
+                <div class="desktop_ocr-header-right">
+                    <div class="desktop_ocr-avatar">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── MAIN ── -->
+        <main class="desktop_ocr-main">
+            <div class="desktop_ocr-card">
+
+                <!-- Camera Viewfinder -->
+                <div class="desktop_ocr-viewfinder">
+
+                    <!-- Background image -->
+                    <div class="desktop_ocr-viewfinder-bg" aria-hidden="true"></div>
+
+                    <!-- Segmented Control -->
+                    <div class="desktop_ocr-segmented-wrap">
+                        <div class="desktop_ocr-segmented">
+                            <button class="desktop_ocr-seg-btn desktop_ocr-seg-btn--active">OCR SCAN</button>
+                            <button class="desktop_ocr-seg-btn desktop_ocr-seg-btn--inactive">MANUAL LOOKUP</button>
+                        </div>
+                    </div>
+
+                    <!-- Scan Overlay -->
+                    <div class="desktop_ocr-scan-overlay">
+                        <div class="desktop_ocr-scan-frame">
+                            <div class="desktop_ocr-corner desktop_ocr-corner--tl"></div>
+                            <div class="desktop_ocr-corner desktop_ocr-corner--tr"></div>
+                            <div class="desktop_ocr-corner desktop_ocr-corner--bl"></div>
+                            <div class="desktop_ocr-corner desktop_ocr-corner--br"></div>
+                            <div class="desktop_ocr-scan-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Camera Controls -->
+                    <div class="desktop_ocr-cam-controls">
+                        <button class="desktop_ocr-cam-btn desktop_ocr-cam-btn--ghost" aria-label="Toggle flash">
+                            <span class="material-symbols-outlined">flash_on</span>
+                        </button>
+                        <button class="desktop_ocr-cam-btn desktop_ocr-cam-btn--primary" aria-label="Capture photo">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                        <button class="desktop_ocr-cam-btn desktop_ocr-cam-btn--ghost" aria-label="Flip camera">
+                            <span class="material-symbols-outlined">flip_camera_ios</span>
+                        </button>
+                    </div>
+
+                </div><!-- /viewfinder -->
+
+                <!-- Instructions -->
+                <div class="desktop_ocr-instructions">
+                    <div class="desktop_ocr-instructions-inner">
+                        <h2 class="desktop_ocr-instructions-title">Scan Identity Document</h2>
+                        <p class="desktop_ocr-instructions-desc">
+                            Place the ID Card or Passport page inside the frame. Ensure the text is
+                            clear and there is no glare from lighting.
+                        </p>
+                        <div class="desktop_ocr-tips-grid">
+                            <div class="desktop_ocr-tip">
+                                <div class="desktop_ocr-tip-icon">
+                                    <span class="material-symbols-outlined">light_mode</span>
+                                </div>
+                                <p class="desktop_ocr-tip-label">Good Lighting</p>
+                                <p class="desktop_ocr-tip-text">Avoid shadows or direct bright reflections.</p>
+                            </div>
+                            
+                            <div class="desktop_ocr-tip">
+                                <div class="desktop_ocr-tip-icon">
+                                    <span class="material-symbols-outlined">camera_enhance</span>
+                                </div>
+                                <p class="desktop_ocr-tip-label">Hold Steady</p>
+                                <p class="desktop_ocr-tip-text">Keep the device still for optimal character reading.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /card -->
+
+            
+        </main>
+
+    </div><!-- /page -->
+</body>
+
+</html>

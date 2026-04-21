@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Architect Events | Annual Devolution Conference</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1e",
+              "on-primary-fixed": "#00164e",
+              "primary-fixed": "#dce1ff",
+              "secondary-fixed": "#d4e3ff",
+              "surface-dim": "#d8dadc",
+              "on-error": "#ffffff",
+              "surface-variant": "#e0e3e5",
+              "primary-fixed-dim": "#b5c4ff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#041c36",
+              "inverse-primary": "#b5c4ff",
+              "inverse-surface": "#2d3133",
+              "on-tertiary-fixed-variant": "#862300",
+              "tertiary-fixed-dim": "#ffb59f",
+              "on-secondary-fixed-variant": "#344864",
+              "surface-container-high": "#e6e8ea",
+              "on-primary-container": "#a2b6ff",
+              "background": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#b3c8e9",
+              "secondary-container": "#c7dbfe",
+              "error-container": "#ffdad6",
+              "tertiary": "#631700",
+              "on-secondary-container": "#4c607d",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#3a0a00",
+              "surface-bright": "#ffffff",
+              "secondary": "#4b5f7d",
+              "on-surface-variant": "#434653",
+              "tertiary-container": "#8a2501",
+              "tertiary-fixed": "#ffdbd1",
+              "surface-container-low": "#f8fafd",
+              "inverse-on-surface": "#eff1f3",
+              "on-error-container": "#93000a",
+              "primary-container": "#003EB3",
+              "surface": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary": "#003EB3",
+              "on-tertiary-container": "#ffa185",
+              "error": "#ba1a1a",
+              "surface-tint": "#003EB3",
+              "outline": "#747685",
+              "on-primary-fixed-variant": "#003cad",
+              "outline-variant": "#c4c5d6",
+              "surface-container": "#eceef0",
+              "on-background": "#191c1e"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "4px",
+              "sm": "2px",
+              "md": "6px",
+              "lg": "8px",
+              "xl": "12px",
+              "2xl": "16px",
+              "3xl": "24px",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .subtle-border {
+        border: 1px solid rgba(116, 118, 133, 0.15);
+      }
+      .nav-active {
+        border-bottom: 2px solid #003EB3;
+        color: #003EB3 !important;
+      }
+    </style>
+</head>
+<body class="bg-white font-body text-on-surface overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-white border-b border-outline-variant/30 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-none">
+<span class="material-symbols-outlined text-white text-xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-on-surface font-headline">Events</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="nav-active font-bold text-sm" href="#">All Events</a>
+<a class="text-on-surface-variant font-medium text-sm hover:text-primary transition-colors" href="#">My Registrations</a>
+<a class="text-on-surface-variant font-medium text-sm hover:text-primary transition-colors" href="#">Past Events</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">download</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">logout</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-6 py-10">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Annual Devolution Conference</h1>
+<p class="text-on-surface-variant text-lg font-medium opacity-80 mb-3">
+                    The definitive annual gathering for architectural visionaries. Real-time monitoring of attendance metrics.
+                </p>
+<!-- Event Location -->
+<div class="flex items-center gap-2 text-primary font-semibold text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span>Grand Hall, Level 4 — Main Entrance Gate B12</span>
+</div>
+</div>
+<div class="mt-6 md:mt-0 flex gap-3">
+<div class="relative inline-block">
+<button class="flex items-center gap-2 border border-outline-variant/30 bg-white text-on-surface px-4 py-3 rounded-lg font-bold text-sm hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-lg text-green-600" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+<span>Event: Open</span>
+<span class="material-symbols-outlined text-lg ml-1">expand_more</span>
+</button>
+</div><button class="bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+                    Register Event
+                </button>
+</div>
+</div>
+<!-- Status Toggles -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Summary Card -->
+<div class="bg-white subtle-border rounded-2xl p-8">
+<h3 class="font-headline font-bold text-xl mb-10 text-on-surface">Attendance Summary</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<span class="text-on-surface-variant text-xs font-bold uppercase tracking-wider opacity-50 block mb-2">Total Guests</span>
+<div class="text-6xl font-extrabold font-headline tracking-tighter text-on-surface">840</div>
+<div class="h-1.5 w-full bg-primary/10 rounded-full mt-6">
+<div class="h-full bg-primary rounded-full w-full"></div>
+</div>
+</div>
+<div>
+<span class="text-on-surface-variant text-xs font-bold uppercase tracking-wider opacity-50 block mb-2">Checked-In</span>
+<div class="text-6xl font-extrabold font-headline tracking-tighter text-primary">612</div>
+<div class="h-1.5 w-full bg-primary/10 rounded-full mt-6">
+<div class="h-full bg-primary rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+<div>
+<span class="text-on-surface-variant text-xs font-bold uppercase tracking-wider opacity-50 block mb-2">Remaining</span>
+<div class="text-6xl font-extrabold font-headline tracking-tighter text-on-surface-variant/30">228</div>
+<div class="h-1.5 w-full bg-primary/10 rounded-full mt-6">
+<div class="h-full bg-on-surface-variant/20 rounded-full" style="width: 28%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-wrap gap-4">
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-3.5 rounded-lg font-bold text-sm shadow-md shadow-primary/10 hover:translate-y-[-1px] transition-all">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+                            Start OCR Scanner
+                        </button>
+<button class="flex items-center gap-2 border border-outline-variant/30 text-on-surface px-6 py-3.5 rounded-lg font-bold text-sm hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                            Manual Check-in
+                        </button>
+</div>
+</div>
+<!-- Event Configuration / Checked Feature List (New Section) -->
+<div class="bg-white subtle-border rounded-2xl p-8">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline font-extrabold text-2xl tracking-tight">Active Event Features</h4>
+<button class="text-primary font-bold text-sm hover:underline">Edit Configuration</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border border-outline-variant/10">
+<div class="w-6 h-6 rounded border-2 border-primary flex items-center justify-center bg-primary text-white">
+<span class="material-symbols-outlined text-lg leading-none">check</span>
+</div>
+<div>
+<div class="font-bold text-sm">OCR Scanning</div>
+<div class="text-[11px] text-on-surface-variant font-medium">Automatic guest recognition</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border border-outline-variant/10">
+<div class="w-6 h-6 rounded border-2 border-primary flex items-center justify-center bg-primary text-white">
+<span class="material-symbols-outlined text-lg leading-none">check</span>
+</div>
+<div>
+<div class="font-bold text-sm">Barcode Scanning</div>
+<div class="text-[11px] text-on-surface-variant font-medium">Digital ticket verification</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border border-outline-variant/10 opacity-50">
+<div class="w-6 h-6 rounded border-2 border-outline-variant flex items-center justify-center">
+</div>
+<div>
+<div class="font-bold text-sm">Include Tokens</div>
+<div class="text-[11px] text-on-surface-variant font-medium">Post-event digital rewards</div>
+</div>
+</div>
+</div>
+</div><div class="bg-white subtle-border rounded-2xl p-8">
+<div class="mb-6">
+<h4 class="font-headline font-extrabold text-2xl tracking-tight mb-6">Scanning Configuration</h4>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant opacity-60" for="scan-regex">
+        Scanning Pattern (Regex)
+      </label>
+<div class="flex flex-col sm:flex-row gap-4 w-full">
+<input class="flex-grow px-4 py-3 rounded-xl border border-outline-variant/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-surface-container-low text-sm font-medium outline-none" id="scan-regex" name="scan-regex" placeholder="^[A-Z0-9]{8,12}$" type="text"/>
+<button class="whitespace-nowrap bg-primary text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-lg">save</span>
+    Save Configuration
+  </button>
+</div>
+<p class="text-[11px] text-on-surface-variant font-medium opacity-70">
+        Define the regular expression for the OCR scanner.
+      </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Arrival Rate Card -->
+<div class="bg-white subtle-border rounded-2xl p-10 flex flex-col items-center text-center">
+<div class="relative w-48 h-48 mb-8">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.9" stroke-dashoffset="154.8" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-extrabold font-headline text-on-surface">73%</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Arrival Rate</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-bold text-xs uppercase tracking-widest text-on-surface">Live Feed Active</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium px-4 opacity-70">Approximately 14 guests arriving every 5 minutes.</p>
+</div>
+</div>
+<!-- Secondary Info Card -->
+<div class="bg-white subtle-border rounded-2xl p-8 space-y-8">
+<div>
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant opacity-50 block mb-4">Staff on Duty</span>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<img alt="Staff 1" class="w-10 h-10 rounded-full border-2 border-white bg-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASXFU9F_lWzGa8bQmBEe_3WV3KD7tWy1bEAajXKG-BIlQn5e79eyqrCET0WFJ1pa-RfmQpzIb4NGaTwQb2qAJlQEhYMXghnsFLx6fDY-1c0q37Ea7IH7iP80lLWHtoBV1FPdzyXGsNxP47pyYHRAUonakLIGzBhbGXad9WY4-ULpimwWMnhQ6FflyoJKUNYsfWhQA1a0D0kCZuaQi93L9gt6wh_9Z7Y9bvQu2sfFcLHLpBAYKZZRA_OFwwkD5EptVsrMwQM_HHQfU"/>
+<img alt="Staff 2" class="w-10 h-10 rounded-full border-2 border-white bg-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH7y8wUR1ugmoYjs0RWTPfkVCDtRe3_HKRZNm-uXxhcbUd_QEtw1ZSTgzoFW_EH-asbIWUXDgFcCDoOLJKV19nSIDseOFS7_su5bYzyt8r3pFfxEZ5z-hryob25Lin-XIBoGeLa15m_WCOfEjF-JQkpJ8mJb8hBZZTykji6zZPswepWyE5j1sZYhMi8jm52hPsyL1TW4xGW5fZ4CCixWr-xnl5pePcDkTyCtj4_QQMwRkr1oNk-NYn5huf1OHQcgNplnaK-uv4dTw"/>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary flex items-center justify-center text-[10px] font-bold text-white">+8</div>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">Manage Team</button>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/10">
+<button class="w-full flex items-center justify-between text-on-surface-variant hover:text-primary transition-colors py-2">
+<span class="font-bold text-[11px] uppercase tracking-widest">Broadcast Announcement</span>
+<span class="material-symbols-outlined text-lg">campaign</span>
+</button>
+</div>
+</div>
+<!-- Support Card -->
+<div class="bg-[#001D4A] text-white rounded-2xl p-8">
+<h5 class="font-headline font-bold text-lg mb-2">Architect Pro Support</h5>
+<p class="text-white/70 text-sm font-medium leading-relaxed mb-6">Need assistance with the scanner hardware or manual overrides?</p>
+<button class="bg-white text-[#001D4A] w-full py-3.5 rounded-lg font-bold text-sm hover:bg-white/90 transition-colors">
+                        Contact Direct
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/30 hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

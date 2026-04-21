@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guest Check-in - OCR Scan</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .scan-frame {
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-white font-display antialiased text-slate-900 min-h-screen flex flex-col">
+    <!-- Updated Top Navigation Bar to match Screen 24 -->
+    <header class="w-full bg-white border-b border-slate-100 px-6 py-4">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-xl">fingerprint</span>
+                </div>
+                <h2 class="text-slate-900 text-lg font-bold leading-tight tracking-tight uppercase tracking-wider">
+                    EVENTS</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-slate-500 text-sm">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col items-center justify-center p-6 bg-slate-50">
+        <div class="w-full max-w-4xl bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <!-- Camera Viewfinder Container -->
+            <div class="relative aspect-[16/9] w-full bg-black overflow-hidden group">
+                <!-- Background Placeholder -->
+                <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-80"
+                    data-alt="Blurred background of an office desk for scanning"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqpCddDh73gR8FSkN_iI7y-lG403hFv5CyBIrTyu5HL32mrvDDoagCEILXPGAI5wUHKgt2fpzF4Lm7FgzC_rQ8oawuuxHbcU9lXsVT23QFifRthThFyZcmbJ4j6GH8Mm8lxdGGGtkNPvxvZN3qUYjiEWGlQg9k213-jEhcTiN0MMF6p4gSxid7oDoRXvZBwRiPM68O2Ed1aAKNpN0s6VC-tA6VrnC3ziLmIeLO6JrEXfsvVT4XD5GL7e5FR1dKTQJzm89hu78AlZbH')">
+                </div>
+                <!-- Floating Segmented Control -->
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-20">
+                    <div class="bg-black/40 backdrop-blur-md p-1 rounded-full border border-white/20 flex gap-1">
+                        <button
+                            class="px-5 py-2 rounded-full text-xs font-bold bg-white text-black shadow-sm transition-all">
+                            OCR SCAN
+                        </button>
+                        <button
+                            class="px-5 py-2 rounded-full text-xs font-bold text-white/80 hover:text-white transition-all">
+                            MANUAL LOOKUP
+                        </button>
+                    </div>
+                </div>
+                <!-- Scan Overlay -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <!-- The "Hole" in the overlay -->
+                    <div
+                        class="scan-frame w-[80%] h-[70%] md:w-[60%] md:h-[65%] border-2 border-white/50 rounded-xl relative">
+                        <!-- Corners -->
+                        <div class="absolute -top-1 -left-1 size-8 border-t-4 border-l-4 border-primary rounded-tl-lg">
+                        </div>
+                        <div class="absolute -top-1 -right-1 size-8 border-t-4 border-r-4 border-primary rounded-tr-lg">
+                        </div>
+                        <div
+                            class="absolute -bottom-1 -left-1 size-8 border-b-4 border-l-4 border-primary rounded-bl-lg">
+                        </div>
+                        <div
+                            class="absolute -bottom-1 -right-1 size-8 border-b-4 border-r-4 border-primary rounded-br-lg">
+                        </div>
+                        <!-- Scanning Line Animation Placeholder -->
+                        <div
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] opacity-70">
+                        </div>
+                    </div>
+                </div>
+                <!-- Camera UI Controls -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-4">
+                    <button
+                        class="flex items-center justify-center size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all">
+                        <span class="material-symbols-outlined text-2xl">flash_on</span>
+                    </button>
+                    <button
+                        class="flex items-center justify-center size-14 rounded-full bg-white text-slate-900 shadow-xl scale-110 hover:scale-105 active:scale-95 transition-all">
+                        <span class="material-symbols-outlined text-3xl">photo_camera</span>
+                    </button>
+                    <button
+                        class="flex items-center justify-center size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all">
+                        <span class="material-symbols-outlined text-2xl">flip_camera_ios</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Instructions Footer -->
+            <div class="p-8 text-center max-w-2xl mx-auto">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Scan Identity Document</h2>
+                <p class="text-slate-500 mb-8">Place the ID Card or Passport page inside the frame. Ensure the text is
+                    clear and there is no glare from lighting.</p>
+                <div class="grid grid-cols-3 gap-6 text-left">
+                    <div class="flex flex-col gap-2">
+                        <div class="size-8 rounded-lg bg-slate-100 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined text-xl">light_mode</span>
+                        </div>
+                        <p class="text-xs font-bold text-slate-900 uppercase tracking-tight">Good Lighting</p>
+                        <p class="text-xs text-slate-500">Avoid shadows or direct bright reflections.</p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="size-8 rounded-lg bg-slate-100 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined text-xl">crop_free</span>
+                        </div>
+                        <p class="text-xs font-bold text-slate-900 uppercase tracking-tight">Full Frame</p>
+                        <p class="text-xs text-slate-500">Ensure all four corners are visible in frame.</p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="size-8 rounded-lg bg-slate-100 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined text-xl">camera_enhance</span>
+                        </div>
+                        <p class="text-xs font-bold text-slate-900 uppercase tracking-tight">Hold Steady</p>
+                        <p class="text-xs text-slate-500">Keep the device still for optimal character reading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Secondary Actions -->
+        <div class="mt-8 flex items-center gap-6">
+            <button
+                class="text-sm font-semibold text-slate-500 transition-colors flex items-center gap-2 hover:text-black">
+                <span class="material-symbols-outlined text-lg">upload_file</span>
+                Upload image instead
+            </button>
+            <div class="size-1 bg-slate-300 rounded-full"></div>
+            <button
+                class="text-sm font-semibold text-slate-500 transition-colors flex items-center gap-2 hover:text-black">
+                <span class="material-symbols-outlined text-lg">help</span>
+                Support
+            </button>
+        </div>
+    </main>
+    <!-- Footer Info -->
+    <footer class="py-6 border-t border-slate-100 bg-white">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-400 text-xs">© 2024 eCitizen Government Services. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a class="text-slate-400 text-xs transition-colors hover:text-black" href="#">Privacy Policy</a>
+                <a class="text-slate-400 text-xs transition-colors hover:text-black" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

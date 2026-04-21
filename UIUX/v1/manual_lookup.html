@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>eCitizen - Manual Guest Lookup</title>
+</head>
+<body class="dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen bg-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-3 sticky top-0 z-50 dark:bg-background-dark bg-white border-b border-slate-200">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl font-bold">fingerprint</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">eCitizen</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary pb-1" href="#">Guests</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Reports</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<div class="bg-primary/10 border border-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFcZ25K6HSwnrv9FdoKRVPZJn6e16GBIdGXYWJj40K4vK4yYzmxDGYmZnHm4IZPnDpGMo4zyNWDwA9-koEH-7iqy-eAi8RlMJFukzw_LPMdHM9TGOdLN8G0_HFeVKD6Y38yrL5xh8vEd5O8k1pBaFfHkNwkCdHvKObWBAzpz7RKvCWKko62yIA89bUTnSFYmHaCMLbRO4eRF9iJAB7hQOWSLFH5iB2f-2U3MtVNW0dNV1Hm7LecxrMnHqGw_P0cQoyhjuP81cnnnoj");'>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[960px] w-full px-6 gap-6">
+<!-- Breadcrumbs & Title -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-slate-500 text-xs font-medium uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>Guest Management</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary">Lookup</span>
+</div>
+<h1 class="text-slate-900 dark:text-white text-3xl font-extrabold leading-tight tracking-tight">Manual Guest Lookup</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Search, verify, and check-in guests manually using their credentials.</p>
+</div><!-- Check-in Method Toggle -->
+<div class="flex p-1 dark:bg-slate-800 rounded-xl w-fit self-center md:self-start bg-slate-50 border border-slate-200">
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-lg">document_scanner</span>
+        OCR Check-in
+    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-white dark:bg-slate-700 text-primary shadow-sm">
+<span class="material-symbols-outlined text-lg">search</span>
+        Manual Lookup
+    </button>
+</div>
+<!-- Search Section -->
+<div class="w-full">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all text-slate-900 dark:text-white placeholder:text-slate-400" placeholder="Search by name, ID, or phone..." type="text"/>
+</div>
+</div>
+<!-- Filters/Actions Row -->
+<div class="flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-white text-sm font-bold uppercase tracking-widest">Recent &amp; Matched Guests</h3>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                                Filter
+                            </button>
+</div>
+</div>
+<!-- Guest List -->
+<div class="flex flex-col gap-3">
+<!-- Guest Card 1 -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white text-lg font-bold">Allan Jackson</span>
+<div class="flex flex-wrap gap-x-4 gap-y-1 mt-0.5">
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-xs">badge</span>
+<span>ID: 29384756</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-xs">call</span>
+<span>+1 (555) 123-4567</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 min-w-[120px] px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">login</span>
+                                    Check In
+                                </button>
+<button class="flex items-center justify-center px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                    More
+                                </button>
+</div>
+</div>
+<!-- Guest Card 2 -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white text-lg font-bold">Sarah Lee</span>
+<div class="flex flex-wrap gap-x-4 gap-y-1 mt-0.5">
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-xs">badge</span>
+<span>ID: 88721034</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-xs">call</span>
+<span>+1 (555) 987-6543</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 min-w-[120px] px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">login</span>
+                                    Check In
+                                </button>
+<button class="flex items-center justify-center px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                    More
+                                </button>
+</div>
+</div>
+<!-- Guest Card 3 -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white text-lg font-bold">Marcus Vance</span>
+<div class="flex flex-wrap gap-x-4 gap-y-1 mt-0.5">
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-xs">badge</span>
+<span>ID: 44521980</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-xs">call</span>
+<span>+1 (555) 234-8899</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 min-w-[120px] px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">login</span>
+                                    Check In
+                                </button>
+<button class="flex items-center justify-center px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                    More
+                                </button>
+</div>
+</div>
+</div>
+<!-- Empty State / Footer Info -->
+<div class="mt-8 flex flex-col items-center justify-center p-12 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50/50 dark:bg-slate-900/30">
+<div class="size-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mb-4">
+<span class="material-symbols-outlined text-3xl">person_add</span>
+</div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-1">New Guest?</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm text-center max-w-xs mb-4">If the guest is not found in the system, you can register them as a new visitor.</p>
+<button class="px-6 py-2 rounded-lg bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                            Register New Guest
+                        </button>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar (Mobile) -->
+<footer class="md:hidden flex items-center justify-around bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 py-3 sticky bottom-0 z-50">
+<button class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Guests</span>
+</button>
+<button class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+<button class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</footer>
+</div>
+</div>
+</body></html>

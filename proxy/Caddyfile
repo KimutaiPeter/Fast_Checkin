@@ -1,0 +1,12 @@
+:80 {
+        reverse_proxy localhost:8080
+}
+events.yote.me {
+        tls internal
+        reverse_proxy http://localhost:5173
+}
+
+events.yote.me:5000 {
+        tls internal
+        reverse_proxy http://localhost:5000
+}

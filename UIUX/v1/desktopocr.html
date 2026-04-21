@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guest Check-in - OCR Scan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#ffffff",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scan-frame {
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white font-display antialiased text-black min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="w-full bg-white border-b border-black/10 px-6 py-5 z-20">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-black p-1.5 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">fingerprint</span>
+</div>
+<h2 class="text-black text-lg font-bold leading-tight tracking-tight uppercase tracking-widest">eCitizen Guest</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center border border-black/5">
+<span class="material-symbols-outlined text-black text-sm">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col bg-white relative">
+<!-- Centered Scanner Area -->
+<div class="flex-1 flex flex-col items-center py-12 px-6">
+<div class="w-full max-w-4xl relative">
+<!-- Floating Toggle Buttons Container (Overlaying on the left) -->
+<div class="absolute left-6 top-1/2 -translate-y-1/2 z-10 hidden md:flex flex-col gap-0 border border-black/10 bg-white/90 backdrop-blur shadow-xl">
+<div class="p-4 pb-2">
+<h3 class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Check-in</h3>
+</div>
+<button class="flex items-center gap-4 px-6 py-4 text-[10px] font-bold bg-black text-white transition-all uppercase tracking-widest min-w-[180px]">
+<span class="material-symbols-outlined text-lg">document_scanner</span>
+                        OCR SCAN
+                    </button>
+<button class="flex items-center gap-4 px-6 py-4 text-[10px] font-bold text-black hover:bg-slate-50 transition-all border-t border-black/5 uppercase tracking-widest min-w-[180px]">
+<span class="material-symbols-outlined text-lg">search</span>
+                        MANUAL LOOKUP
+                    </button>
+</div>
+<!-- Camera Viewfinder Container -->
+<div class="relative aspect-[16/9] w-full bg-black overflow-hidden group border border-black/10">
+<!-- Background Placeholder -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-60 grayscale" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqpCddDh73gR8FSkN_iI7y-lG403hFv5CyBIrTyu5HL32mrvDDoagCEILXPGAI5wUHKgt2fpzF4Lm7FgzC_rQ8oawuuxHbcU9lXsVT23QFifRthThFyZcmbJ4j6GH8Mm8lxdGGGtkNPvxvZN3qUYjiEWGlQg9k213-jEhcTiN0MMF6p4gSxid7oDoRXvZBwRiPM68O2Ed1aAKNpN0s6VC-tA6VrnC3ziLmIeLO6JrEXfsvVT4XD5GL7e5FR1dKTQJzm89hu78AlZbH')">
+</div>
+<!-- Scan Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="scan-frame w-[80%] h-[70%] md:w-[65%] md:h-[65%] border border-white/30 relative">
+<!-- Corners -->
+<div class="absolute -top-[1px] -left-[1px] size-10 border-t-2 border-l-2 border-white"></div>
+<div class="absolute -top-[1px] -right-[1px] size-10 border-t-2 border-r-2 border-white"></div>
+<div class="absolute -bottom-[1px] -left-[1px] size-10 border-b-2 border-l-2 border-white"></div>
+<div class="absolute -bottom-[1px] -right-[1px] size-10 border-b-2 border-r-2 border-white"></div>
+<!-- Scanning Line Animation Placeholder -->
+<div class="absolute top-0 left-0 right-0 h-[1px] bg-white/40 shadow-[0_0_10px_rgba(255,255,255,0.5)] opacity-50"></div>
+</div>
+</div>
+<!-- Camera UI Controls -->
+<div class="absolute bottom-8 left-0 right-0 flex justify-center gap-6">
+<button class="flex items-center justify-center size-12 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white hover:bg-black/60 transition-all">
+<span class="material-symbols-outlined text-xl">flash_on</span>
+</button>
+<button class="flex items-center justify-center size-16 rounded-full bg-white text-black shadow-2xl hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">photo_camera</span>
+</button>
+<button class="flex items-center justify-center size-12 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white hover:bg-black/60 transition-all">
+<span class="material-symbols-outlined text-xl">flip_camera_ios</span>
+</button>
+</div>
+</div>
+<!-- Instructions Footer -->
+<div class="py-12 text-center mx-auto">
+<h2 class="text-2xl font-bold text-black mb-3 uppercase tracking-wider">Scan Identity Document</h2>
+<p class="text-slate-500 mb-12 max-w-xl mx-auto text-sm leading-relaxed">Place the ID Card or Passport page inside the frame. Ensure the text is clear and there is no glare from lighting.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-left max-w-3xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="size-10 rounded-none bg-black flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">light_mode</span>
+</div>
+<p class="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Good Lighting</p>
+<p class="text-[11px] text-slate-500 leading-relaxed">Avoid shadows or direct bright reflections on the document.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="size-10 rounded-none bg-black flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">crop_free</span>
+</div>
+<p class="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Full Frame</p>
+<p class="text-[11px] text-slate-500 leading-relaxed">Ensure all four corners of the card are visible in frame.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="size-10 rounded-none bg-black flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">camera_enhance</span>
+</div>
+<p class="text-[10px] font-bold text-black uppercase tracking-[0.2em]">Hold Steady</p>
+<p class="text-[11px] text-slate-500 leading-relaxed">Keep the device still for optimal character recognition.</p>
+</div>
+</div>
+</div>
+<!-- Secondary Actions in a clean row below content -->
+<div class="flex justify-center gap-12 pt-8 border-t border-black/5">
+<button class="text-[10px] font-bold text-slate-500 hover:text-black transition-colors flex items-center gap-3 uppercase tracking-widest">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+                        Upload image
+                    </button>
+<button class="text-[10px] font-bold text-slate-500 hover:text-black transition-colors flex items-center gap-3 uppercase tracking-widest">
+<span class="material-symbols-outlined text-lg">help</span>
+                        Support
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Floating Toggle -->
+<div class="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+<div class="bg-black p-1 flex gap-0 border border-black shadow-2xl">
+<button class="px-6 py-3 text-[10px] font-bold bg-white text-black uppercase tracking-widest">
+                OCR SCAN
+            </button>
+<button class="px-6 py-3 text-[10px] font-bold text-white uppercase tracking-widest">
+                MANUAL
+            </button>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="py-8 border-t border-black/5 bg-white">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-[10px] font-medium uppercase tracking-widest">© 2024 eCitizen Government Services. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-slate-400 text-[10px] font-medium uppercase tracking-widest hover:text-black transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 text-[10px] font-medium uppercase tracking-widest hover:text-black transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

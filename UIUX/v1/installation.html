@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#ffffff",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Install eCitizen Events</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark">
+<div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">event_available</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold tracking-tight">eCitizen Events</h1>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest">Official Government Portal</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 py-12">
+<div class="max-w-md w-full text-center space-y-8">
+<!-- Branding/App Icon -->
+<div class="flex justify-center">
+<div class="size-24 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-5xl text-primary">download_for_offline</span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="space-y-3">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+                    Install Events Management
+                </h2>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                    Click the button below to install the official events management system on your device for offline access and instant notifications.
+                </p>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full sm:w-64 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98]">
+<span class="material-symbols-outlined">download</span>
+<span>Install Now</span>
+</button>
+</div>
+<!-- Security/Version Footer -->
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Secure Installation</span>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs">
+                        Version 1.0.4 • Compatible with iOS, Android, and Desktop
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Page Footer -->
+<footer class="w-full py-8 border-t border-slate-100 dark:border-slate-900">
+<div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 dark:text-slate-600 text-sm">
+                © 2024 eCitizen Events Management System
+            </p>
+<div class="flex gap-6 text-sm text-slate-400 dark:text-slate-600">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+<button aria-label="Go back" class="fixed top-20 left-6 z-50 flex items-center justify-center size-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary/20">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+</button></body></html>

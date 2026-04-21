@@ -1,0 +1,714 @@
+/* ─── CSS Custom Properties ──────────────────────────────────────────── */
+    :root {
+      --team-color-primary:              #0036cc;
+      --team-color-primary-hover:        #002bb3;
+      --team-color-background:           #ffffff;
+      --team-color-surface:              #ffffff;
+      --team-color-on-surface:           #111827;
+      --team-color-on-surface-variant:   #6b7280;
+      --team-color-outline:              #e5e7eb;
+      --team-color-surface-container:    #f9fafb;
+      --team-font-headline:              'Manrope', sans-serif;
+      --team-font-body:                  'Inter', sans-serif;
+      --team-radius:                     0.375rem;
+      --team-radius-lg:                  0.5rem;
+      --team-radius-xl:                  0.75rem;
+      --team-radius-full:                9999px;
+    }
+
+    /* ─── Base Reset ──────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    a    { text-decoration: none; color: inherit; }
+    img  { display: block; }
+
+    /* ─── Material Symbols ───────────────────────────────────────────────── */
+    .team-icon {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ─── Page Wrapper ───────────────────────────────────────────────────── */
+    .team-page {
+      font-family: var(--team-font-body);
+      color: var(--team-color-on-surface);
+      background: var(--team-color-background);
+      min-height: 100vh;
+    }
+
+    /* ─── Header ─────────────────────────────────────────────────────────── */
+    .team-header {
+      width: 100%;
+      border-bottom: 1px solid var(--team-color-outline);
+      background: var(--team-color-surface);
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .team-header-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .team-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--team-color-primary);
+      border-radius: var(--team-radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .team-logo-icon .team-icon {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .team-logo-label {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--team-color-on-surface);
+      font-family: var(--team-font-headline);
+    }
+
+    .team-nav {
+      display: none;
+      align-items: center;
+      gap: 32px;
+    }
+    @media (min-width: 768px) {
+      .team-nav { display: flex; }
+    }
+
+    .team-nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--team-color-on-surface-variant);
+      transition: color 0.2s;
+      font-family: var(--team-font-body);
+    }
+    .team-nav-link:hover { color: var(--team-color-primary); }
+
+    .team-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .team-icon-btn {
+      padding: 8px;
+      color: var(--team-color-on-surface-variant);
+      border: 1px solid var(--team-color-outline);
+      border-radius: var(--team-radius-lg);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      font-family: var(--team-font-body);
+    }
+    .team-icon-btn:hover { background: var(--team-color-surface-container); }
+    .team-icon-btn .team-icon { font-size: 20px; }
+
+    /* ─── Main ───────────────────────────────────────────────────────────── */
+    .team-main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 32px;
+    }
+
+    /* ─── Page Header ────────────────────────────────────────────────────── */
+    .team-page-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-page-header {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .team-page-title {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--team-color-on-surface);
+      font-family: var(--team-font-headline);
+      margin-bottom: 8px;
+    }
+
+    .team-page-subtitle {
+      font-size: 14px;
+      color: var(--team-color-on-surface-variant);
+      font-family: var(--team-font-body);
+    }
+
+    .team-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--team-color-primary);
+      color: #fff;
+      border-radius: var(--team-radius-lg);
+      font-weight: 600;
+      font-size: 14px;
+      font-family: var(--team-font-body);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .team-btn-primary:hover { background: var(--team-color-primary-hover); }
+    .team-btn-primary .team-icon { font-size: 14px; }
+
+    /* ─── Card Base ──────────────────────────────────────────────────────── */
+    .team-card {
+      background: var(--team-color-surface);
+      border: 1px solid var(--team-color-outline);
+      border-radius: var(--team-radius-xl);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .team-card-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--team-color-outline);
+    }
+
+    .team-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--team-color-on-surface);
+      font-family: var(--team-font-headline);
+    }
+
+    /* ─── Add Member Form ────────────────────────────────────────────────── */
+    .team-add-card {
+      margin-bottom: 32px;
+    }
+
+    .team-form-body {
+      padding: 24px;
+      background: rgba(249,250,251,0.3);
+    }
+
+    .team-form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: end;
+    }
+    @media (min-width: 768px) {
+      .team-form-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .team-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .team-field-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--team-color-on-surface-variant);
+      font-family: var(--team-font-body);
+    }
+
+    .team-name-group {
+      border-bottom: 1px solid var(--team-color-outline);
+      padding: 4px 0;
+    }
+
+    .team-name-input {
+      border: none;
+      padding: 0;
+      background: transparent;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--team-color-on-surface);
+      width: 100%;
+      font-family: var(--team-font-body);
+      outline: none;
+    }
+    .team-name-input:focus {
+      border-bottom: 1px solid var(--team-color-primary);
+    }
+
+    .team-email-input {
+      width: 100%;
+      font-size: 12px;
+      color: var(--team-color-on-surface-variant);
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-family: var(--team-font-body);
+      outline: none;
+    }
+
+    .team-select-box {
+      border: 1px solid var(--team-color-outline);
+      background: var(--team-color-surface);
+      border-radius: var(--team-radius);
+      padding: 6px 8px;
+    }
+
+    .team-select-input {
+      border: none;
+      padding: 0;
+      background: transparent;
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--team-color-on-surface);
+      width: 100%;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      font-family: var(--team-font-body);
+      outline: none;
+    }
+    .team-select-input:focus {
+      border-bottom: 1px solid var(--team-color-primary);
+    }
+
+    .team-form-submit {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .team-btn-add {
+      width: 100%;
+      padding: 10px 24px;
+      background: var(--team-color-primary);
+      color: #fff;
+      border-radius: var(--team-radius-lg);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-family: var(--team-font-body);
+      transition: background 0.2s;
+    }
+    @media (min-width: 768px) {
+      .team-btn-add { width: auto; }
+    }
+    .team-btn-add:hover { background: var(--team-color-primary-hover); }
+
+    /* ─── Directory Card ─────────────────────────────────────────────────── */
+    .team-directory-toolbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      border-bottom: 1px solid var(--team-color-outline);
+    }
+    @media (min-width: 768px) {
+      .team-directory-toolbar { flex-direction: row; }
+    }
+
+    .team-directory-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--team-color-on-surface);
+      font-family: var(--team-font-headline);
+    }
+
+    .team-search-wrap {
+      position: relative;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .team-search-wrap { width: auto; }
+    }
+
+    .team-search-input {
+      padding: 8px 16px;
+      border: 1px solid var(--team-color-outline);
+      border-radius: var(--team-radius-lg);
+      font-size: 14px;
+      width: 100%;
+      background: var(--team-color-surface-container);
+      font-family: var(--team-font-body);
+      color: var(--team-color-on-surface);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    @media (min-width: 768px) {
+      .team-search-input { width: 256px; }
+    }
+    .team-search-input:focus {
+      border-color: var(--team-color-primary);
+      box-shadow: 0 0 0 2px rgba(0,54,204,0.15);
+    }
+
+    /* ─── Table ──────────────────────────────────────────────────────────── */
+    .team-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .team-table {
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    .team-thead-row {
+      background: var(--team-color-surface-container);
+      border-bottom: 1px solid var(--team-color-outline);
+    }
+
+    .team-th {
+      padding: 16px 24px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--team-color-on-surface-variant);
+      font-family: var(--team-font-body);
+    }
+    .team-th-right { text-align: right; }
+
+    .team-tbody-row {
+      border-bottom: 1px solid var(--team-color-outline);
+      transition: background 0.15s;
+    }
+    .team-tbody-row:last-child { border-bottom: none; }
+    .team-tbody-row:hover { background: rgba(249,250,251,0.5); }
+
+    .team-td {
+      padding: 20px 24px;
+      vertical-align: middle;
+    }
+    .team-td-right { text-align: right; }
+
+    /* Name cell */
+    .team-member-name-input {
+      border: none;
+      padding: 0;
+      background: transparent;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--team-color-on-surface);
+      width: 80%;
+      font-family: var(--team-font-body);
+      outline: none;
+    }
+    .team-member-name-input:focus {
+      border-bottom: 1px solid var(--team-color-primary);
+    }
+
+    .team-member-email {
+      font-size: 12px;
+      color: var(--team-color-on-surface-variant);
+      font-family: var(--team-font-body);
+    }
+
+    /* Role selects */
+    .team-role-select {
+      border: none;
+      padding: 4px 8px;
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: var(--team-radius);
+      font-family: var(--team-font-body);
+      outline: none;
+    }
+    .team-role-select:focus {
+      border-bottom: 1px solid var(--team-color-primary);
+    }
+
+    .team-role-admin {
+      background: #eff6ff;
+      color: var(--team-color-primary);
+      border: 1px solid #bfdbfe;
+    }
+
+    .team-role-staff {
+      background: #f9fafb;
+      color: var(--team-color-on-surface-variant);
+      border: 1px solid var(--team-color-outline);
+    }
+
+    .team-role-security {
+      background: #fff7ed;
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+    }
+
+    /* Security selects */
+    .team-security-select {
+      border: none;
+      padding: 0;
+      background: transparent;
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      font-family: var(--team-font-body);
+      outline: none;
+    }
+    .team-security-select:focus {
+      border-bottom: 1px solid var(--team-color-primary);
+    }
+    .team-security-muted  { color: var(--team-color-on-surface-variant); }
+    .team-security-green  { color: #16a34a; }
+
+    /* Edit button */
+    .team-edit-btn {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--team-color-on-surface-variant);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--team-font-body);
+      transition: color 0.15s;
+    }
+    .team-edit-btn:hover { color: var(--team-color-on-surface); }
+
+    /* ─── Table Footer ───────────────────────────────────────────────────── */
+    .team-table-footer {
+      padding: 24px;
+      border-top: 1px solid var(--team-color-outline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .team-result-count {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--team-color-on-surface-variant);
+      font-family: var(--team-font-body);
+    }
+
+    .team-pagination {
+      display: flex;
+      gap: 8px;
+    }
+
+    .team-page-btn {
+      padding: 6px 12px;
+      border: 1px solid var(--team-color-outline);
+      border-radius: var(--team-radius);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--team-font-body);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.15s;
+      color: var(--team-color-on-surface);
+    }
+    .team-page-btn:hover:not(:disabled) { background: var(--team-color-surface-container); }
+    .team-page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ─── Bottom Grid ────────────────────────────────────────────────────── */
+    .team-bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    @media (min-width: 1024px) {
+      .team-bottom-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ─── Permission Templates Card ──────────────────────────────────────── */
+    .team-permissions-card {
+      background: var(--team-color-surface);
+      border: 1px solid var(--team-color-outline);
+      border-radius: var(--team-radius-xl);
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .team-permissions-title {
+      font-weight: 700;
+      color: var(--team-color-on-surface);
+      margin-bottom: 16px;
+      font-family: var(--team-font-headline);
+    }
+
+    .team-permissions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .team-permission-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border: 1px solid var(--team-color-outline);
+      border-radius: var(--team-radius-lg);
+      background: rgba(249,250,251,0.3);
+    }
+
+    .team-permission-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .team-permission-icon {
+      color: var(--team-color-primary);
+      font-size: 24px;
+    }
+
+    .team-permission-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--team-color-on-surface);
+      font-family: var(--team-font-body);
+    }
+
+    .team-permission-desc {
+      font-size: 12px;
+      color: var(--team-color-on-surface-variant);
+      font-family: var(--team-font-body);
+    }
+
+    .team-permission-badge {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--team-color-on-surface-variant);
+      background: var(--team-color-surface);
+      padding: 2px 8px;
+      border-radius: var(--team-radius);
+      border: 1px solid var(--team-color-outline);
+      font-family: var(--team-font-body);
+    }
+
+    /* ─── Team Insights Card ─────────────────────────────────────────────── */
+    .team-insights-card {
+      background: var(--team-color-primary);
+      border-radius: var(--team-radius-xl);
+      padding: 24px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .team-insights-content { position: relative; z-index: 1; }
+
+    .team-insights-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: var(--team-font-headline);
+    }
+
+    .team-insights-subtitle {
+      color: #bfdbfe;
+      font-size: 12px;
+      margin-bottom: 24px;
+      font-family: var(--team-font-body);
+    }
+
+    .team-insights-metrics { display: flex; flex-direction: column; gap: 16px; }
+
+    .team-metric-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      font-family: var(--team-font-body);
+    }
+
+    .team-metric-track {
+      height: 6px;
+      background: rgba(255,255,255,0.2);
+      border-radius: var(--team-radius-full);
+      overflow: hidden;
+    }
+
+    .team-metric-fill {
+      height: 100%;
+      background: #fff;
+      border-radius: var(--team-radius-full);
+    }
+
+    .team-audit-btn {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      width: 100%;
+      padding: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--team-radius-lg);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      font-family: var(--team-font-body);
+      transition: background 0.2s;
+    }
+    .team-audit-btn:hover { background: rgba(255,255,255,0.2); }
+
+    .team-insights-blob {
+      position: absolute;
+      right: -32px;
+      bottom: -32px;
+      width: 160px;
+      height: 160px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--team-radius-full);
+      filter: blur(24px);
+    }

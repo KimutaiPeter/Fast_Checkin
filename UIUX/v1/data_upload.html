@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Stellar Admin - Data Management</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#003EB3",
+            "primary-hover": "#003294",
+            "error": "#ba1a1a",
+            "background": "#ffffff",
+            "surface": "#ffffff",
+            "on-surface": "#111827",
+            "on-surface-variant": "#6b7280",
+            "outline": "#e5e7eb",
+            "surface-container": "#f9fafb",
+            "surface-container-low": "#f9fafb",
+            "surface-container-lowest": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-headline {
+      font-family: 'Manrope', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+  <!-- TopAppBar -->
+  <header class="w-full border-b border-outline bg-white px-8 h-16 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-8">
+      <div class="flex items-center gap-4">
+        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-xl">account_balance</span>
+        </div>
+        <span class="text-lg font-bold tracking-tight text-on-surface">Stellar Admin</span>
+      </div>
+      <nav class="hidden md:flex gap-8">
+        <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Dashboard</a>
+        <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">Events</a>
+        <a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="#">Data</a>
+        <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
+          href="#">Analytics</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="relative group hidden sm:block">
+        <span
+          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+        <input
+          class="pl-10 pr-4 py-2 bg-surface-container border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent w-64 text-sm"
+          placeholder="Search systems..." type="text" />
+      </div>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-lg border border-outline">
+        <span class="material-symbols-outlined text-xl">notifications</span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-lg border border-outline">
+        <span class="material-symbols-outlined text-xl">settings</span>
+      </button>
+      <div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline">
+        <img alt="User profile avatar" class="w-full h-full object-cover"
+          data-alt="Professional headshot of a smiling business executive in a dark suit with soft office lighting background"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdexk_tqdOgLQgYGt-DcWnhA9UKMFLNOgIUSVMVdncp39R5R6-CGSSA_h51n1zAenA8HhsgHLE5mIl93JSJCNb18wuO1BDRKNaWXsdqqTHpiOikuyAgCT0g-zTb3U8jRnTUT3wuZZk0-Zw_904zojgwqsgtiqsOzr4sD4gyIKOySonXzM3qVDG4jNR5y0uRxeSMfTuC94Rx9H6VE4HMh3wU4B7BWyRrMiK6Sirz8RHEudM1rUp0xJgoATvxH4-53wOdcu_kL10RRo" />
+      </div>
+    </div>
+  </header>
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Main Content Canvas (No Sidebar) -->
+    <main class="flex-1 overflow-y-auto bg-background p-10 max-w-7xl mx-auto w-full">
+      <!-- Header Section -->
+      <header class="mb-10">
+        <h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2 font-headline">Data Management</h1>
+        <p class="text-on-surface-variant text-sm max-w-2xl font-body">Upload and manage your guest lists via CSV.
+          Ensure your data matches the system requirements for seamless event processing.</p>
+      </header>
+      <!-- Layout Grid -->
+      <div class="grid grid-cols-12 gap-8">
+        <!-- Left Column: Upload & Progress -->
+        <div class="col-span-12 lg:col-span-8 space-y-8">
+          <!-- Upload Card -->
+          <section
+            class="bg-white border border-outline rounded-xl shadow-[0_1px_3px_0_rgba(0,0,0,0.05)] p-8 relative overflow-hidden">
+            <div class="flex justify-between items-center mb-8">
+              <div>
+                <h3 class="text-lg font-bold text-on-surface mb-1">Upload Data Source</h3>
+                <p class="text-sm text-on-surface-variant">CSV, XLS, or TXT files supported.</p>
+              </div>
+              <button
+                class="flex items-center gap-2 px-4 py-2 text-primary border border-outline rounded-lg hover:bg-surface-container transition-colors text-sm font-semibold">
+                <span class="material-symbols-outlined text-sm">download</span>
+                Download CSV Template
+              </button>
+            </div>
+            <!-- Drag and Drop Zone -->
+            <div
+              class="border-2 border-dashed border-outline rounded-xl py-16 flex flex-col items-center justify-center bg-surface-container/30 hover:bg-surface-container/50 transition-all cursor-pointer group">
+              <div
+                class="w-16 h-16 bg-white border border-outline rounded-full flex items-center justify-center shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+              </div>
+              <p class="text-on-surface font-semibold mb-1">Drag and drop your file here</p>
+              <p class="text-on-surface-variant text-sm">or <span class="text-primary font-bold">browse files</span> on
+                your computer</p>
+            </div>
+          </section>
+          <!-- Upload Progress Section -->
+          <section class="bg-white border border-outline rounded-xl shadow-[0_1px_3px_0_rgba(0,0,0,0.05)] p-8">
+            <div class="flex justify-between items-end mb-4">
+              <div>
+                <span class="text-[11px] font-bold text-primary uppercase tracking-widest block mb-1">Active
+                  Operation</span>
+                <h4 class="text-xl font-bold text-on-surface">Uploading 4,250 of 10,000 records...</h4>
+              </div>
+              <span class="text-3xl font-black text-on-surface/10">42%</span>
+            </div>
+            <!-- Premium Progress Bar -->
+            <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+              <div class="h-full bg-primary w-[42%] rounded-full"></div>
+            </div>
+            <div class="mt-6 flex gap-4">
+              <div class="flex-1 bg-surface-container/50 p-4 rounded-lg border border-outline">
+                <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider mb-1">Time Remaining
+                </p>
+                <p class="text-lg font-bold text-on-surface">~2m 14s</p>
+              </div>
+              <div class="flex-1 bg-surface-container/50 p-4 rounded-lg border border-outline">
+                <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider mb-1">Upload Speed</p>
+                <p class="text-lg font-bold text-on-surface">1.2 MB/s</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Right Column: Summary & Status -->
+        <div class="col-span-12 lg:col-span-4 space-y-8">
+          <!-- Post-Upload Summary Card -->
+          <section class="bg-primary text-white rounded-xl p-8 shadow-sm relative overflow-hidden">
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center border border-white/20">
+                  <span class="material-symbols-outlined text-white"
+                    style="font-variation-settings: 'FILL' 1;">analytics</span>
+                </div>
+                <h3 class="font-bold text-lg">Batch Summary</h3>
+              </div>
+              <div class="space-y-6">
+                <div>
+                  <p class="text-blue-100 text-[11px] font-bold uppercase tracking-wider mb-1">Total Records Found</p>
+                  <p class="text-4xl font-extrabold tracking-tight">10,000</p>
+                </div>
+                <div>
+                  <p class="text-blue-100 text-[11px] font-bold uppercase tracking-wider mb-2">Processing Status</p>
+                  <div class="flex items-center gap-2 bg-white/10 w-fit px-3 py-1.5 rounded-lg border border-white/20">
+                    <span class="relative flex h-2 w-2">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-100"></span>
+                    </span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider">Upload in Progress</span>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-white/10">
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="text-blue-100">Valid Records</span>
+                    <span class="font-bold">4,110</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-blue-100">Warnings/Errors</span>
+                    <span class="font-bold text-blue-200">140</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Helpful Tips Card -->
+          <section class="bg-surface-container border border-outline rounded-xl p-6">
+            <h4 class="text-on-surface font-bold mb-4 flex items-center gap-2 text-sm">
+              <span class="material-symbols-outlined text-primary text-lg">info</span>
+              Best Practices
+            </h4>
+            <ul class="space-y-4 text-[13px] text-on-surface-variant">
+              <li class="flex gap-3">
+                <span class="text-primary font-bold">01</span>
+                <p>Ensure all emails are unique to prevent duplicate contact creation.</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary font-bold">02</span>
+                <p>Map the "First Name" and "Last Name" columns exactly to our template headers.</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary font-bold">03</span>
+                <p>International phone numbers must include the country code (e.g., +1).</p>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <!-- Recent Imports Section -->
+      <section class="mt-12">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-on-surface font-headline">Recent Imports</h2>
+          <button class="text-primary font-bold text-sm hover:underline">View All History</button>
+        </div>
+        <div class="space-y-3">
+          <!-- List Item 1 -->
+          <div
+            class="bg-white border border-outline rounded-xl p-5 flex items-center justify-between group hover:bg-surface-container transition-all shadow-[0_1px_2px_0_rgba(0,0,0,0.02)]">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container border border-outline flex items-center justify-center text-on-surface-variant group-hover:bg-primary/5 group-hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">table_chart</span>
+              </div>
+              <div>
+                <p class="font-bold text-on-surface">Global_Con_Guestlist_v2.csv</p>
+                <p class="text-xs text-on-surface-variant">Imported on Oct 24, 2023 • 12,400 records</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-8">
+              <div class="hidden md:block">
+                <span
+                  class="inline-flex items-center rounded bg-surface-container border border-outline px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Completed</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-primary p-2">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </div>
+          <!-- List Item 2 -->
+          <div
+            class="bg-white border border-outline rounded-xl p-5 flex items-center justify-between group hover:bg-surface-container transition-all shadow-[0_1px_2px_0_rgba(0,0,0,0.02)]">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container border border-outline flex items-center justify-center text-on-surface-variant group-hover:bg-primary/5 group-hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">table_chart</span>
+              </div>
+              <div>
+                <p class="font-bold text-on-surface">Vip_Dinner_Final.csv</p>
+                <p class="text-xs text-on-surface-variant">Imported on Oct 22, 2023 • 450 records</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-8">
+              <div class="hidden md:block">
+                <span
+                  class="inline-flex items-center rounded bg-surface-container border border-outline px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Completed</span>
+              </div>
+              <button class="text-on-surface-variant hover:text-primary p-2">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,544 @@
+/* ─── Reset / Base ─────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        /* ─── Page Wrapper ──────────────────────────────────── */
+        .desktop_ocr-page {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            color: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+
+        /* ─── HEADER ────────────────────────────────────────── */
+        .desktop_ocr-header {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 1rem 1.5rem;
+        }
+
+        .desktop_ocr-header-inner {
+            max-width: 64rem;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .desktop_ocr-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .desktop_ocr-brand-icon {
+            background: #000000;
+            padding: 0.375rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .desktop_ocr-brand-icon .material-symbols-outlined {
+            color: #ffffff;
+            font-size: 1.25rem;
+        }
+
+        .desktop_ocr-brand-title {
+            color: #0f172a;
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .desktop_ocr-header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .desktop_ocr-avatar {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 9999px;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .desktop_ocr-avatar .material-symbols-outlined {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        /* ─── MAIN ──────────────────────────────────────────── */
+        .desktop_ocr-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: #f8fafc;
+        }
+
+        /* ─── Card ──────────────────────────────────────────── */
+        .desktop_ocr-card {
+            width: 100%;
+            max-width: 56rem;
+            background: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        /* ─── Camera Viewfinder ─────────────────────────────── */
+        .desktop_ocr-viewfinder {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000000;
+            overflow: hidden;
+        }
+
+        .desktop_ocr-viewfinder-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqpCddDh73gR8FSkN_iI7y-lG403hFv5CyBIrTyu5HL32mrvDDoagCEILXPGAI5wUHKgt2fpzF4Lm7FgzC_rQ8oawuuxHbcU9lXsVT23QFifRthThFyZcmbJ4j6GH8Mm8lxdGGGtkNPvxvZN3qUYjiEWGlQg9k213-jEhcTiN0MMF6p4gSxid7oDoRXvZBwRiPM68O2Ed1aAKNpN0s6VC-tA6VrnC3ziLmIeLO6JrEXfsvVT4XD5GL7e5FR1dKTQJzm89hu78AlZbH');
+        }
+
+        /* Segmented Control */
+        .desktop_ocr-segmented-wrap {
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .desktop_ocr-segmented {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.25rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            gap: 0.25rem;
+            white-space: nowrap;
+        }
+
+        .desktop_ocr-seg-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transition: all 0.15s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .desktop_ocr-seg-btn--active {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .desktop_ocr-seg-btn--inactive {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .desktop_ocr-seg-btn--inactive:hover {
+            color: #ffffff;
+        }
+
+        /* Scan Overlay */
+        .desktop_ocr-scan-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .desktop_ocr-scan-frame {
+            width: 80%;
+            height: 70%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 0.75rem;
+            position: relative;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Corner decorations */
+        .desktop_ocr-corner {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .desktop_ocr-corner--tl {
+            top: -0.25rem;
+            left: -0.25rem;
+            border-top: 4px solid #000000;
+            border-left: 4px solid #000000;
+            border-top-left-radius: 0.5rem;
+        }
+
+        .desktop_ocr-corner--tr {
+            top: -0.25rem;
+            right: -0.25rem;
+            border-top: 4px solid #000000;
+            border-right: 4px solid #000000;
+            border-top-right-radius: 0.5rem;
+        }
+
+        .desktop_ocr-corner--bl {
+            bottom: -0.25rem;
+            left: -0.25rem;
+            border-bottom: 4px solid #000000;
+            border-left: 4px solid #000000;
+            border-bottom-left-radius: 0.5rem;
+        }
+
+        .desktop_ocr-corner--br {
+            bottom: -0.25rem;
+            right: -0.25rem;
+            border-bottom: 4px solid #000000;
+            border-right: 4px solid #000000;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        /* Scanning line animation */
+        .desktop_ocr-scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            opacity: 0.7;
+            animation: desktop_ocr-scanline 2.4s ease-in-out infinite;
+        }
+
+        @keyframes desktop_ocr-scanline {
+            0% {
+                top: 0;
+            }
+
+            50% {
+                top: calc(100% - 2px);
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        /* Camera Controls */
+        .desktop_ocr-cam-controls {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .desktop_ocr-cam-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 9999px;
+            transition: all 0.15s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .desktop_ocr-cam-btn--ghost {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .desktop_ocr-cam-btn--ghost:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .desktop_ocr-cam-btn--ghost .material-symbols-outlined {
+            font-size: 1.5rem;
+        }
+
+        .desktop_ocr-cam-btn--primary {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+        }
+
+        .desktop_ocr-cam-btn--primary:hover {
+            transform: scale(1.05);
+        }
+
+        .desktop_ocr-cam-btn--primary:active {
+            transform: scale(0.95);
+        }
+
+        .desktop_ocr-cam-btn--primary .material-symbols-outlined {
+            font-size: 1.875rem;
+        }
+
+        /* ─── Instructions ──────────────────────────────────── */
+        .desktop_ocr-instructions {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .desktop_ocr-instructions-inner {
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .desktop_ocr-instructions-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .desktop_ocr-instructions-desc {
+            color: #64748b;
+            margin-bottom: 2rem;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .desktop_ocr-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .desktop_ocr-tip {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .desktop_ocr-tip-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000000;
+            flex-shrink: 0;
+        }
+
+        .desktop_ocr-tip-icon .material-symbols-outlined {
+            font-size: 1.25rem;
+        }
+
+        .desktop_ocr-tip-label {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .desktop_ocr-tip-text {
+            font-size: 0.75rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* ─── Secondary Actions ─────────────────────────────── */
+        .desktop_ocr-secondary-actions {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .desktop_ocr-secondary-btn {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.15s ease;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .desktop_ocr-secondary-btn:hover {
+            color: #000000;
+        }
+
+        .desktop_ocr-secondary-btn .material-symbols-outlined {
+            font-size: 1.125rem;
+        }
+
+        .desktop_ocr-divider-dot {
+            width: 0.25rem;
+            height: 0.25rem;
+            background: #cbd5e1;
+            border-radius: 9999px;
+            flex-shrink: 0;
+        }
+
+        /* ─── FOOTER ────────────────────────────────────────── */
+        .desktop_ocr-footer {
+            padding: 1.5rem 0;
+            border-top: 1px solid #f1f5f9;
+            background: #ffffff;
+        }
+
+        .desktop_ocr-footer-inner {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .desktop_ocr-footer-copy {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+
+        .desktop_ocr-footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .desktop_ocr-footer-link {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            transition: color 0.15s ease;
+        }
+
+        .desktop_ocr-footer-link:hover {
+            color: #000000;
+        }
+
+        /* ─── Responsive ────────────────────────────────────── */
+        @media (min-width: 768px) {
+            .desktop_ocr-scan-frame {
+                width: 60%;
+                height: 65%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .desktop_ocr-header {
+                padding: 0.875rem 1rem;
+            }
+
+            .desktop_ocr-brand-title {
+                font-size: 0.9375rem;
+            }
+
+            .desktop_ocr-main {
+                padding: 0.75rem;
+            }
+
+            .desktop_ocr-instructions {
+                padding: 1.25rem 1rem;
+            }
+
+            .desktop_ocr-instructions-title {
+                font-size: 1.15rem;
+            }
+
+            .desktop_ocr-instructions-desc {
+                font-size: 0.8125rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .desktop_ocr-tips-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .desktop_ocr-cam-btn {
+                width: 2.75rem;
+                height: 2.75rem;
+            }
+
+            .desktop_ocr-cam-btn--primary {
+                transform: scale(1.05);
+            }
+
+            .desktop_ocr-seg-btn {
+                padding: 0.375rem 0.875rem;
+                font-size: 0.65rem;
+            }
+
+            .desktop_ocr-secondary-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-top: 1.25rem;
+            }
+
+            .desktop_ocr-divider-dot {
+                display: none;
+            }
+
+            .desktop_ocr-footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }

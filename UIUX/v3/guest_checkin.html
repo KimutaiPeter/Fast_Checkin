@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Update Guest Details - OCR Check-in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="guest_checkin.css">
+</head>
+
+<body>
+
+  <div class="guest_checkin-container">
+
+    <!-- HEADER -->
+    <header class="guest_checkin-header">
+      <div class="guest_checkin-header-left">
+        <button class="guest_checkin-back-btn" type="button">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <h1 class="guest_checkin-header-title">Update Guest Details</h1>
+      </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="guest_checkin-main">
+      <div class="guest_checkin-form-wrapper">
+
+        <!-- Success Banner -->
+        <div class="guest_checkin-success-banner">
+          <span class="material-symbols-outlined">check_circle</span>
+          <p>Guest details updated successfully!</p>
+        </div>
+
+        <!-- Section Heading -->
+        <div class="guest_checkin-section-heading">
+          <h2>Personal Information</h2>
+          <p>Please verify and update the guest information extracted from the document.</p>
+        </div>
+
+        <!-- Form -->
+        <form class="guest_checkin-form">
+
+          <!-- Full Name -->
+          <div class="guest_checkin-field">
+            <label class="guest_checkin-label" for="full_name">Full Name</label>
+            <div class="guest_checkin-input-wrap">
+              <input class="guest_checkin-input guest_checkin-input-with-icon" id="full_name" name="full_name"
+                type="text" placeholder="Enter full name" value="Alexander Johnathan Doe" />
+              <span class="material-symbols-outlined guest_checkin-input-icon">edit</span>
+            </div>
+          </div>
+
+          <!-- ID / Passport Number -->
+          <div class="guest_checkin-field">
+            <label class="guest_checkin-label" for="id_number">ID/Passport Number</label>
+            <div class="guest_checkin-input-wrap">
+              <input class="guest_checkin-input guest_checkin-input-with-icon" id="id_number" name="id_number"
+                type="text" placeholder="Enter ID or Passport number" value="A123456789" />
+              <span class="material-symbols-outlined guest_checkin-input-icon">badge</span>
+            </div>
+          </div>
+
+          <!-- Phone + Email Grid -->
+          <div class="guest_checkin-grid-2">
+            <!-- Phone -->
+            <div class="guest_checkin-field">
+              <label class="guest_checkin-label" for="phone">Phone Number</label>
+              <div class="guest_checkin-input-wrap">
+                <input class="guest_checkin-input" id="phone" name="phone" type="tel" placeholder="Enter phone number"
+                  value="+1 (555) 000-1234" />
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="guest_checkin-field">
+              <label class="guest_checkin-label" for="email">Email Address</label>
+              <div class="guest_checkin-input-wrap">
+                <input class="guest_checkin-input" id="email" name="email" type="email"
+                  placeholder="Enter email address" value="alex.doe@example.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- OCR Verified Box -->
+          <div class="guest_checkin-verified-box">
+            <span class="material-symbols-outlined">verified</span>
+            <div>
+              <p class="guest_checkin-verified-title">Verified by OCR System</p>
+              <p class="guest_checkin-verified-desc">Fields were successfully scanned from the provided ID document.
+                Manual corrections are highlighted.</p>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="guest_checkin-actions">
+            <button class="guest_checkin-btn-submit" type="submit">
+              Update Details
+              <span class="material-symbols-outlined">check_circle</span>
+            </button>
+            <button class="guest_checkin-btn-cancel" type="button">
+              Cancel
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+
+  </div>
+
+</body>
+
+</html>

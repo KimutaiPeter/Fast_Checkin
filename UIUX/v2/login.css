@@ -1,0 +1,297 @@
+/* ===== CSS VARIABLES ===== */
+  :root {
+    --login-primary:      #1142d4;
+    --login-slate-50:     #f8fafc;
+    --login-slate-100:    #f1f5f9;
+    --login-slate-200:    #e2e8f0;
+    --login-slate-400:    #94a3b8;
+    --login-slate-500:    #64748b;
+    --login-slate-900:    #0f172a;
+    --login-font:         'Inter', sans-serif;
+  }
+
+  /* ===== RESET ===== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  a    { text-decoration: none; color: inherit; }
+  button { font-family: var(--login-font); cursor: pointer; }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ===== PAGE SHELL ===== */
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
+    font-family: var(--login-font);
+    color: var(--login-slate-900);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  .login-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid var(--login-slate-100);
+    padding: 16px 24px;
+  }
+
+  .login-header-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .login-brand-icon {
+    background: var(--login-primary);
+    padding: 6px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-brand-icon .material-symbols-outlined {
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .login-brand-name {
+    color: var(--login-slate-900);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .login-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background: var(--login-slate-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-user-avatar .material-symbols-outlined {
+    color: var(--login-slate-500);
+    font-size: 16px;
+  }
+
+  /* ===== MAIN ===== */
+  .login-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+  }
+
+  .login-card {
+    max-width: 384px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ===== ICON & HEADING ===== */
+  .login-heading-section {
+    margin-bottom: 32px;
+  }
+
+  .login-lock-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 9999px;
+    background: rgba(17, 66, 212, 0.1);
+    margin-bottom: 24px;
+  }
+
+  .login-lock-icon-wrap .material-symbols-outlined {
+    color: var(--login-primary);
+    font-size: 30px;
+  }
+
+  .login-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--login-slate-900);
+    margin-bottom: 8px;
+  }
+
+  .login-subtitle {
+    color: var(--login-slate-500);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ===== PIN DOTS ===== */
+  .login-pin-dots {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .login-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: var(--login-slate-200);
+  }
+
+  .login-dot-active {
+    background: var(--login-primary);
+    box-shadow: 0 0 0 4px rgba(17, 66, 212, 0.2);
+  }
+
+  /* ===== KEYPAD ===== */
+  .login-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 16px;
+    max-width: 280px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .login-key {
+    width: 80px;
+    height: 80px;
+    border-radius: 9999px;
+    border: 1px solid var(--login-slate-50);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--login-slate-900);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    transition: background 0.15s;
+  }
+
+  .login-key:hover { background: var(--login-slate-50); }
+
+  .login-key-backspace .material-symbols-outlined {
+    font-size: 24px;
+  }
+
+  .login-key-empty {
+    width: 80px;
+    height: 80px;
+    visibility: hidden;
+  }
+
+  /* ===== FOOTER LINKS (below keypad) ===== */
+  .login-card-footer {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .login-forgot-btn {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--login-primary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: text-decoration 0.1s;
+  }
+
+  .login-forgot-btn:hover { text-decoration: underline; }
+
+  .login-encrypted-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--login-slate-400);
+    font-size: 12px;
+  }
+
+  .login-encrypted-note .material-symbols-outlined {
+    font-size: 16px;
+  }
+
+  /* ===== PAGE FOOTER ===== */
+  .login-footer {
+    width: 100%;
+    border-top: 1px solid var(--login-slate-100);
+    padding: 24px;
+  }
+
+  .login-footer-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .login-footer-copy {
+    color: var(--login-slate-400);
+    font-size: 12px;
+  }
+
+  .login-footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .login-footer-links a {
+    color: var(--login-slate-400);
+    font-size: 12px;
+    transition: color 0.15s;
+  }
+
+  .login-footer-links a:hover { color: var(--login-primary); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 480px) {
+    .login-footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .login-key {
+      width: 72px;
+      height: 72px;
+    }
+
+    .login-key-empty {
+      width: 72px;
+      height: 72px;
+    }
+
+    .login-keypad {
+      grid-template-columns: repeat(3, 72px);
+      gap: 12px;
+    }
+  }

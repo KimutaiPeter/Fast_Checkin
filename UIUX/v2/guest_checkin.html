@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="guest_details-light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Update Guest Details - OCR Check-in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="guest_checkin.css">
+</head>
+
+<body>
+
+  <div class="guest_details-page-wrapper">
+    <div class="guest_details-container">
+
+      <!-- Top Navigation Bar -->
+      <header class="guest_details-header">
+        <div class="guest_details-header-left">
+          <button class="guest_details-back-btn" aria-label="Go back">
+            <span class="guest_details-icon">arrow_back</span>
+          </button>
+          <h1 class="guest_details-page-title">Update Guest Details</h1>
+        </div>
+        
+      </header>
+
+      <!-- Form Body -->
+      <main class="guest_details-main">
+        <div class="guest_details-form-inner">
+
+          <!-- Success Banner -->
+          <div class="guest_details-success-banner" role="alert">
+            <span class="guest_details-icon guest_details-success-icon">check_circle</span>
+            <p class="guest_details-success-text">Guest details updated successfully!</p>
+          </div>
+
+          <!-- Section: Personal Information -->
+          <div class="guest_details-section-header">
+            <h2 class="guest_details-section-title">Personal Information</h2>
+            <p class="guest_details-section-subtitle">Please verify and update the guest information extracted from the
+              document.</p>
+          </div>
+
+          <form class="guest_details-form">
+
+            <!-- Full Name -->
+            <div class="guest_details-field-group">
+              <label class="guest_details-label" for="full_name">Full Name</label>
+              <div class="guest_details-input-wrapper">
+                <input class="guest_details-input" id="full_name" name="full_name" type="text"
+                  placeholder="Enter full name" value="Alexander Johnathan Doe" />
+                <span class="guest_details-icon guest_details-input-icon guest_details-icon-sm">edit</span>
+              </div>
+            </div>
+
+            <!-- ID / Passport Number -->
+            <div class="guest_details-field-group">
+              <label class="guest_details-label" for="id_number">ID/Passport Number</label>
+              <div class="guest_details-input-wrapper">
+                <input class="guest_details-input" id="id_number" name="id_number" type="text"
+                  placeholder="Enter ID or Passport number" value="A123456789" />
+                <span class="guest_details-icon guest_details-input-icon guest_details-icon-sm">badge</span>
+              </div>
+            </div>
+
+            <!-- Phone + Email -->
+            <div class="guest_details-grid-2">
+              <div class="guest_details-field-group">
+                <label class="guest_details-label" for="phone">Phone Number</label>
+                <div class="guest_details-input-wrapper">
+                  <input class="guest_details-input" id="phone" name="phone" type="tel" placeholder="Enter phone number"
+                    value="+1 (555) 000-1234" />
+                </div>
+              </div>
+              <div class="guest_details-field-group">
+                <label class="guest_details-label" for="email">Email Address</label>
+                <div class="guest_details-input-wrapper">
+                  <input class="guest_details-input" id="email" name="email" type="email"
+                    placeholder="Enter email address" value="alex.doe@example.com" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Guest Category + Organization -->
+            <div class="guest_details-grid-2">
+              <div class="guest_details-field-group">
+                <label class="guest_details-label" for="guest_category">Guest Category</label>
+                <div class="guest_details-input-wrapper">
+                  <input class="guest_details-input" id="guest_category" name="guest_category" type="text"
+                    placeholder="e.g. VIP, Standard" value="VIP" />
+                  <span class="guest_details-icon guest_details-input-icon guest_details-icon-sm">label</span>
+                </div>
+              </div>
+              <div class="guest_details-field-group">
+                <label class="guest_details-label" for="organization">Organization</label>
+                <div class="guest_details-input-wrapper">
+                  <input class="guest_details-input" id="organization" name="organization" type="text"
+                    placeholder="Enter organization name" value="Global Tech Solutions" />
+                  <span class="guest_details-icon guest_details-input-icon guest_details-icon-sm">corporate_fare</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Information Section -->
+            <div class="guest_details-divider">
+              <div class="guest_details-additional-header">
+                <div>
+                  <h2 class="guest_details-section-title">Additional Information</h2>
+                  <p class="guest_details-section-subtitle">Add or update custom fields specific to this guest.</p>
+                </div>
+                <button class="guest_details-add-field-btn" type="button">
+                  <span class="guest_details-icon guest_details-icon-sm">add_circle</span>
+                  Add New Field
+                </button>
+              </div>
+
+              <div class="guest_details-custom-fields">
+                <!-- Existing Custom Fields -->
+                <div class="guest_details-grid-2">
+                  <div class="guest_details-field-group">
+                    <label class="guest_details-custom-label">Dietary Requirements</label>
+                    <input class="guest_details-custom-input" type="text" placeholder="e.g. Vegetarian, No peanuts"
+                      value="Vegetarian, Nut Allergy" />
+                  </div>
+                  <div class="guest_details-field-group">
+                    <label class="guest_details-custom-label">Special Assistance</label>
+                    <input class="guest_details-custom-input" type="text" placeholder="e.g. Wheelchair access"
+                      value="Wheelchair Access Required" />
+                  </div>
+                </div>
+
+                <!-- Add New Field Card -->
+                <div class="guest_details-new-field-card">
+                  <div class="guest_details-grid-3-auto">
+                    <div class="guest_details-field-group">
+                      <label class="guest_details-custom-label" for="new_field_name">Field Name</label>
+                      <input class="guest_details-new-field-input" id="new_field_name" type="text"
+                        placeholder="e.g. Preferred Language" />
+                    </div>
+                    <div class="guest_details-field-group">
+                      <label class="guest_details-custom-label" for="new_field_value">Field Value</label>
+                      <input class="guest_details-new-field-input" id="new_field_value" type="text"
+                        placeholder="e.g. English, Swahili" />
+                    </div>
+                    <button class="guest_details-save-btn" type="button">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Event History Section -->
+            <div class="guest_details-divider">
+              <div class="guest_details-section-header">
+                <h2 class="guest_details-section-title">Recent Event History</h2>
+                <p class="guest_details-section-subtitle">Activity log for this guest across recent registered events.
+                </p>
+              </div>
+
+              <div class="guest_details-table-wrapper">
+                <div class="guest_details-table-scroll">
+                  <table class="guest_details-table">
+                    <thead class="guest_details-table-head">
+                      <tr>
+                        <th class="guest_details-table-th">Event Name</th>
+                        <th class="guest_details-table-th">Date &amp; Time</th>
+                        <th class="guest_details-table-th">Check-in Time</th>
+                        <th class="guest_details-table-th">Location</th>
+                        <th class="guest_details-table-th">Status</th>
+                        <th class="guest_details-table-th guest_details-table-th-right">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="guest_details-table-body">
+                      <!-- Row 1 -->
+                      <tr>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-event-name">National Innovation Forum 2024</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-event-date">Oct 14, 2024</div>
+                          <div class="guest_details-event-time-sub">09:12 AM</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-checkin-time">09:15 AM</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-location-cell">
+                            <span class="guest_details-icon guest_details-location-icon">location_on</span>
+                            Main Hall A
+                          </div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <span class="guest_details-badge guest_details-badge-attended">Attended</span>
+                        </td>
+                        <td class="guest_details-table-td guest_details-action-cell">
+                          <button class="guest_details-row-action-btn" aria-label="More options">
+                            <span class="guest_details-icon guest_details-icon-xl">more_vert</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <!-- Row 2 -->
+                      <tr>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-event-name">Sustainability Summit 2024</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-event-date">Nov 02, 2024</div>
+                          <div class="guest_details-event-time-sub">08:45 AM</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-checkin-time">08:50 AM</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-location-cell">
+                            <span class="guest_details-icon guest_details-location-icon">location_on</span>
+                            Green Pavilion
+                          </div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <span class="guest_details-badge guest_details-badge-checkedin">Checked-In</span>
+                        </td>
+                        <td class="guest_details-table-td guest_details-action-cell">
+                          <button class="guest_details-row-action-btn" aria-label="More options">
+                            <span class="guest_details-icon guest_details-icon-xl">more_vert</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <!-- Row 3 -->
+                      <tr>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-event-name">Regional Civic Dialogue</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-event-date">Nov 15, 2024</div>
+                          <div class="guest_details-event-time-sub">10:00 AM</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-checkin-empty">—</div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <div class="guest_details-location-cell">
+                            <span class="guest_details-icon guest_details-location-icon">location_on</span>
+                            Civic Plaza
+                          </div>
+                        </td>
+                        <td class="guest_details-table-td">
+                          <span class="guest_details-badge guest_details-badge-noshow">No-Show</span>
+                        </td>
+                        <td class="guest_details-table-td guest_details-action-cell">
+                          <button class="guest_details-row-action-btn" aria-label="More options">
+                            <span class="guest_details-icon guest_details-icon-xl">more_vert</span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- OCR Verification Badge -->
+            <div class="guest_details-ocr-badge">
+              <span class="guest_details-icon guest_details-ocr-icon">verified</span>
+              <div>
+                <p class="guest_details-ocr-title">Verified by OCR System</p>
+                <p class="guest_details-ocr-desc">Fields were successfully scanned from the provided ID document. Manual
+                  corrections are highlighted.</p>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="guest_details-actions">
+              <button class="guest_details-submit-btn" type="submit">
+                Update Details
+                <span class="guest_details-icon">check_circle</span>
+              </button>
+              <button class="guest_details-cancel-btn" type="button">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </main>
+
+      
+
+    </div>
+  </div>
+
+</body>
+
+</html>

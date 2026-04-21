@@ -1,0 +1,296 @@
+/* ===== CSS VARIABLES ===== */
+  :root {
+    --installation-primary:   #1142d4;
+    --installation-slate-50:  #f8fafc;
+    --installation-slate-100: #f1f5f9;
+    --installation-slate-200: #e2e8f0;
+    --installation-slate-400: #94a3b8;
+    --installation-slate-500: #64748b;
+    --installation-slate-600: #475569;
+    --installation-slate-900: #0f172a;
+    --installation-font:      'Inter', sans-serif;
+  }
+
+  /* ===== RESET ===== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  a      { text-decoration: none; color: inherit; }
+  button { font-family: var(--installation-font); cursor: pointer; }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ===== PAGE SHELL ===== */
+  .installation-page {
+    background: #ffffff;
+    font-family: var(--installation-font);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== HEADER ===== */
+  .installation-header {
+    width: 100%;
+    border-bottom: 1px solid var(--installation-slate-200);
+    background: #fff;
+  }
+
+  .installation-header-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .installation-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .installation-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(17,66,212,0.1);
+    color: var(--installation-primary);
+    flex-shrink: 0;
+  }
+
+  .installation-brand-icon .material-symbols-outlined {
+    font-size: 24px;
+  }
+
+  .installation-brand-name {
+    color: var(--installation-slate-900);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .installation-header-label {
+    display: none;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--installation-slate-400);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ===== MAIN ===== */
+  .installation-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  .installation-card {
+    max-width: 448px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* App Icon */
+  .installation-app-icon-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .installation-app-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 16px;
+    background: var(--installation-slate-50);
+    border: 1px solid var(--installation-slate-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  .installation-app-icon .material-symbols-outlined {
+    font-size: 48px;
+    color: var(--installation-primary);
+  }
+
+  /* Text Content */
+  .installation-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .installation-heading {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--installation-slate-900);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .installation-description {
+    color: var(--installation-slate-600);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Install Button */
+  .installation-action {
+    padding-top: 16px;
+  }
+
+  .installation-install-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--installation-primary);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(17,66,212,0.2);
+    transition: background 0.15s, transform 0.1s;
+  }
+
+  .installation-install-btn:hover  { background: rgba(17,66,212,0.9); }
+  .installation-install-btn:active { transform: scale(0.98); }
+
+  .installation-install-btn .material-symbols-outlined {
+    font-size: 20px;
+  }
+
+  /* Security / Version block */
+  .installation-security {
+    padding-top: 32px;
+    border-top: 1px solid var(--installation-slate-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .installation-secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--installation-primary);
+  }
+
+  .installation-secure-badge .material-symbols-outlined {
+    font-size: 16px;
+  }
+
+  .installation-secure-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .installation-version-text {
+    color: var(--installation-slate-400);
+    font-size: 12px;
+  }
+
+  /* ===== FOOTER ===== */
+  .installation-footer {
+    width: 100%;
+    padding: 32px 0;
+    border-top: 1px solid var(--installation-slate-100);
+  }
+
+  .installation-footer-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .installation-footer-copy {
+    color: var(--installation-slate-400);
+    font-size: 14px;
+  }
+
+  .installation-footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .installation-footer-links a {
+    font-size: 14px;
+    color: var(--installation-slate-400);
+    transition: color 0.15s;
+  }
+
+  .installation-footer-links a:hover { color: var(--installation-primary); }
+
+  /* ===== BACK BUTTON (fixed) ===== */
+  .installation-back-btn {
+    position: fixed;
+    top: 80px;
+    left: 24px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background: #fff;
+    border: 1px solid var(--installation-slate-200);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    color: var(--installation-slate-600);
+    transition: background 0.15s, transform 0.1s;
+  }
+
+  .installation-back-btn:hover  { background: var(--installation-slate-50); }
+  .installation-back-btn:active { transform: scale(0.95); }
+  .installation-back-btn:focus  { outline: none; box-shadow: 0 0 0 3px rgba(17,66,212,0.2); }
+
+  .installation-back-btn .material-symbols-outlined {
+    font-size: 20px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 640px) {
+    .installation-install-btn {
+      width: 256px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .installation-header-label {
+      display: block;
+    }
+
+    .installation-footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>eCitizen Events - Secure Login</title>
+</head>
+<body class="bg-white font-display text-slate-900 antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="w-full bg-white border-b border-slate-100 px-6 py-4">
+<div class="max-w-5xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">event_seat</span>
+</div>
+<h2 class="text-slate-900 text-lg font-bold leading-tight tracking-tight uppercase tracking-wider">eCitizen Events</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 text-sm">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-4 py-12">
+<div class="max-w-sm w-full text-center">
+<!-- Icon & Header Section -->
+<div class="mb-8">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">lock</span>
+</div>
+<h1 class="text-2xl font-bold text-slate-900 mb-2">Secure Access</h1>
+<p class="text-slate-500 text-sm">Please enter your 6-digit access PIN to continue to the events portal.</p>
+</div>
+<!-- PIN Visual Indicators -->
+<div class="flex justify-center gap-4 mb-12">
+<!-- Active dot -->
+<div class="w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<!-- Active dot -->
+<div class="w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<!-- Empty dots -->
+<div class="w-3.5 h-3.5 rounded-full bg-slate-200"></div>
+<div class="w-3.5 h-3.5 rounded-full bg-slate-200"></div>
+<div class="w-3.5 h-3.5 rounded-full bg-slate-200"></div>
+<div class="w-3.5 h-3.5 rounded-full bg-slate-200"></div>
+</div>
+<!-- Numeric Keypad -->
+<div class="grid grid-cols-3 gap-4 max-w-[280px] mx-auto">
+<!-- Numbers 1-9 -->
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">1</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">2</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">3</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">4</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">5</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">6</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">7</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">8</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">9</button>
+<!-- Bottom row -->
+<div class="w-20 h-20"></div>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-semibold text-slate-900 hover:bg-slate-50 transition-colors border border-slate-50 shadow-sm">0</button>
+<button class="w-20 h-20 rounded-full flex items-center justify-center text-slate-900 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-2xl">backspace</span>
+</button>
+</div>
+<!-- Footer Links -->
+<div class="mt-12 space-y-4">
+<button class="text-sm font-medium text-primary hover:underline">Forgot PIN?</button>
+<div class="flex items-center justify-center gap-2 text-xs text-slate-400">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>End-to-end encrypted session</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-100 py-6 px-6">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 eCitizen Events Management System. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 text-xs hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 text-xs hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 text-xs hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</body></html>

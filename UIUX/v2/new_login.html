@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link rel="stylesheet" href="login.css"/>
+  <title>eCitizen Events - Secure Login</title>
+  <link rel="stylesheet" href="new_login.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="login-header">
+    <div class="login-header-inner">
+      <div class="login-brand">
+        <div class="login-brand-icon">
+          <span class="material-symbols-outlined login-brand-icon-symbol">event_seat</span>
+        </div>
+        <h2 class="login-brand-name">eCitizen Events</h2>
+      </div>
+      <div class="login-header-right">
+        <div class="login-avatar">
+          <span class="material-symbols-outlined login-avatar-icon">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="login-main">
+    <div class="login-card">
+
+      <!-- Icon & Header -->
+      <div class="login-hero">
+        <div class="login-hero-icon-wrap" id="loginHeroIconWrap">
+          <span class="material-symbols-outlined login-hero-icon" id="loginHeroIcon">lock</span>
+        </div>
+        <h1 class="login-title">Secure Access</h1>
+        <p class="login-subtitle login-subtitle-pin" id="loginSubtitlePin">Please enter your email and 6-digit access PIN to continue to the events portal.</p>
+        <p class="login-subtitle login-subtitle-password login-hidden" id="loginSubtitlePassword">Please enter your email and account password to continue to the events portal.</p>
+      </div>
+
+      <!-- Email Input -->
+      <div class="login-field">
+        <label class="login-field-label" for="loginEmail">Email Address</label>
+        <input class="login-input" id="loginEmail" name="email" placeholder="Enter your email address" type="email"/>
+      </div>
+
+      <!-- Mode Toggle -->
+      <div class="login-toggle-wrap">
+        <div class="login-toggle">
+          <button class="login-toggle-btn login-toggle-btn-active" id="loginBtnPin" onclick="switchMode('pin')">PIN</button>
+          <button class="login-toggle-btn" id="loginBtnPassword" onclick="switchMode('password')">Password</button>
+        </div>
+      </div>
+
+      <!-- PIN View -->
+      <div class="login-pin-view" id="loginPinView">
+        <!-- PIN Indicators -->
+        <div class="login-pin-indicators" id="loginPinIndicators">
+          <div class="login-pin-dot login-pin-dot-empty" data-index="0"></div>
+          <div class="login-pin-dot login-pin-dot-empty" data-index="1"></div>
+          <div class="login-pin-dot login-pin-dot-empty" data-index="2"></div>
+          <div class="login-pin-dot login-pin-dot-empty" data-index="3"></div>
+          <div class="login-pin-dot login-pin-dot-empty" data-index="4"></div>
+          <div class="login-pin-dot login-pin-dot-empty" data-index="5"></div>
+        </div>
+
+        <!-- Keypad -->
+        <div class="login-keypad">
+          <button class="login-key" onclick="pressKey('1')">1</button>
+          <button class="login-key" onclick="pressKey('2')">2</button>
+          <button class="login-key" onclick="pressKey('3')">3</button>
+          <button class="login-key" onclick="pressKey('4')">4</button>
+          <button class="login-key" onclick="pressKey('5')">5</button>
+          <button class="login-key" onclick="pressKey('6')">6</button>
+          <button class="login-key" onclick="pressKey('7')">7</button>
+          <button class="login-key" onclick="pressKey('8')">8</button>
+          <button class="login-key" onclick="pressKey('9')">9</button>
+          <div class="login-key-empty"></div>
+          <button class="login-key" onclick="pressKey('0')">0</button>
+          <button class="login-key login-key-icon" onclick="pressBackspace()">
+            <span class="material-symbols-outlined">backspace</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Password View -->
+      <div class="login-password-view login-hidden" id="loginPasswordView">
+        <div class="login-field">
+          <label class="login-field-label">Password</label>
+          <input class="login-input" placeholder="Enter password" type="password"/>
+        </div>
+        <button class="login-submit-btn">Login</button>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="login-footer-links">
+        <button class="login-forgot-btn" id="loginForgotBtn">Forgot PIN?</button>
+        <div class="login-security-note">
+          <span class="material-symbols-outlined login-security-icon">verified_user</span>
+          <span class="login-security-text">End-to-end encrypted session</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="login-footer">
+    <div class="login-footer-inner">
+      <p class="login-footer-copy">© 2024 eCitizen Events Management System. All rights reserved.</p>
+      <div class="login-footer-links-row">
+        <a class="login-footer-link" href="#">Privacy Policy</a>
+        <a class="login-footer-link" href="#">Terms of Service</a>
+        <a class="login-footer-link" href="#">Help Center</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentMode = 'pin';
+    let pinValue = '';
+
+    function switchMode(mode) {
+      currentMode = mode;
+
+      const pinView = document.getElementById('loginPinView');
+      const passwordView = document.getElementById('loginPasswordView');
+      const subtitlePin = document.getElementById('loginSubtitlePin');
+      const subtitlePassword = document.getElementById('loginSubtitlePassword');
+      const heroIcon = document.getElementById('loginHeroIcon');
+      const forgotBtn = document.getElementById('loginForgotBtn');
+      const btnPin = document.getElementById('loginBtnPin');
+      const btnPassword = document.getElementById('loginBtnPassword');
+
+      if (mode === 'pin') {
+        pinView.classList.remove('login-hidden');
+        passwordView.classList.add('login-hidden');
+        subtitlePin.classList.remove('login-hidden');
+        subtitlePassword.classList.add('login-hidden');
+        heroIcon.textContent = 'lock';
+        forgotBtn.textContent = 'Forgot PIN?';
+        btnPin.classList.add('login-toggle-btn-active');
+        btnPassword.classList.remove('login-toggle-btn-active');
+      } else {
+        pinView.classList.add('login-hidden');
+        passwordView.classList.remove('login-hidden');
+        subtitlePin.classList.add('login-hidden');
+        subtitlePassword.classList.remove('login-hidden');
+        heroIcon.textContent = 'password';
+        forgotBtn.textContent = 'Forgot Password?';
+        btnPin.classList.remove('login-toggle-btn-active');
+        btnPassword.classList.add('login-toggle-btn-active');
+      }
+    }
+
+    function pressKey(digit) {
+      if (pinValue.length >= 6) return;
+      pinValue += digit;
+      updateDots();
+    }
+
+    function pressBackspace() {
+      pinValue = pinValue.slice(0, -1);
+      updateDots();
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.login-pin-dot');
+      dots.forEach((dot, i) => {
+        if (i < pinValue.length) {
+          dot.classList.remove('login-pin-dot-empty');
+          dot.classList.add('login-pin-dot-filled');
+        } else {
+          dot.classList.remove('login-pin-dot-filled');
+          dot.classList.add('login-pin-dot-empty');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
